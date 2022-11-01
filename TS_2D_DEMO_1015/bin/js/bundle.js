@@ -17,6 +17,27 @@
             }
             this.CreateNumberCard();
             this.CreateNumberCard();
+            this.LoadTexture();
+        }
+        LoadTexture() {
+            var resArr = [
+                { url: "images/2048Atlas_2.png", type: Laya.Loader.IMAGE },
+                { url: "images/2048Atlas_4.png", type: Laya.Loader.IMAGE },
+                { url: "images/2048Atlas_8.png", type: Laya.Loader.IMAGE },
+                { url: "images/2048Atlas_16.png", type: Laya.Loader.IMAGE },
+                { url: "images/2048Atlas_32.png", type: Laya.Loader.IMAGE },
+                { url: "images/2048Atlas_64.png", type: Laya.Loader.IMAGE },
+                { url: "images/2048Atlas_128.png", type: Laya.Loader.IMAGE },
+                { url: "images/2048Atlas_256.png", type: Laya.Loader.IMAGE },
+                { url: "images/2048Atlas_512.png", type: Laya.Loader.IMAGE },
+                { url: "images/2048Atlas_1024.png", type: Laya.Loader.IMAGE },
+                { url: "images/2048Atlas_2048.png", type: Laya.Loader.IMAGE },
+                { url: "images/2048Atlas_4096.png", type: Laya.Loader.IMAGE },
+                { url: "images/2048Atlas_8192.png", type: Laya.Loader.IMAGE },
+            ];
+            Laya.loader.load(resArr, Laya.Handler.create(this, function (result) {
+                console.log(result);
+            }));
         }
         CreateNumberCard() {
             var index = this.GetRandomNullIndex();

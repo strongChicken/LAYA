@@ -9,7 +9,7 @@ export default class GameManager extends Laya.Script {
         this.numberArr = new Array<Array<number>>(4);
     }
 
-    onAwake() {
+    onAwake(): void {
         // 初始化二维数组
         for(let i=0; i<4; i++) {
             this.numberArr[i] = new Array<number>(4);
@@ -21,9 +21,11 @@ export default class GameManager extends Laya.Script {
 
         this.CreateNumberCard();
         this.CreateNumberCard();
+
+        this.LoadTexture();
     }
     
-    LoadTexture(): {
+    LoadTexture(): void {
         var resArr: Array<{url: string, type: string}> = [
             {url:"images/2048Atlas_2.png", type: Laya.Loader.IMAGE},
             {url:"images/2048Atlas_4.png", type: Laya.Loader.IMAGE},
@@ -36,10 +38,12 @@ export default class GameManager extends Laya.Script {
             {url:"images/2048Atlas_512.png", type: Laya.Loader.IMAGE},
             {url:"images/2048Atlas_1024.png", type: Laya.Loader.IMAGE},
             {url:"images/2048Atlas_2048.png", type: Laya.Loader.IMAGE},
-            {url:"images/2048Atlas_4098.png", type: Laya.Loader.IMAGE},
+            {url:"images/2048Atlas_4096.png", type: Laya.Loader.IMAGE},
             {url:"images/2048Atlas_8192.png", type: Laya.Loader.IMAGE},
         ];
-        Laya.loader.load(resArr, Laya.Handler.create(this, function(result: boolean){}));
+        Laya.loader.load(resArr, Laya.Handler.create(this, function(result: boolean){
+            console.log(result);
+        }));
     }
 
 
@@ -54,7 +58,7 @@ export default class GameManager extends Laya.Script {
         var row: number = parseInt(String(index/4));
         var col: number = index%4;
         
-        var dialog: Laya.Image = new Laya.Image("images/2048Atlas_" + 2 + ".png");
+        var dialog: Laya.Image = Laya.loader.getRes("images/2048Atlas_" + 2 + ".png");
         Laya.stage.addChild(dialog);
         var point = this.list.localToGlobal(new Laya.Point(cell.x, cell.y));
 
