@@ -15,8 +15,7 @@
                     this.numberArr[i][j] = 0;
                 }
             }
-            this.CreateNumberCard();
-            this.CreateNumberCard();
+            console.log(this.numberArr);
             this.LoadTexture();
         }
         LoadTexture() {
@@ -36,7 +35,8 @@
                 { url: "images/2048Atlas_8192.png", type: Laya.Loader.IMAGE },
             ];
             Laya.loader.load(resArr, Laya.Handler.create(this, function (result) {
-                console.log(result);
+                this.CreateNumberCard();
+                this.CreateNumberCard();
             }));
         }
         CreateNumberCard() {
@@ -45,13 +45,16 @@
                 return;
             }
             var cell = this.list.getCell(index);
-            var row = parseInt(String(index / 4));
-            var col = index % 4;
-            var dialog = new Laya.Image("images/2048Atlas_" + 2 + ".png");
+            var valueArr = [2, 4];
+            var cardValue = this.GetRandom(0, valueArr.length - 1);
+            var dialog = Laya.loader.getRes("images/2048Atlas_" + cardValue + ".png");
             Laya.stage.addChild(dialog);
             var point = this.list.localToGlobal(new Laya.Point(cell.x, cell.y));
             dialog.pos(point.x, point.y);
             dialog.scale(1.2, 1.2);
+            var row = parseInt(String(index / 4));
+            var col = index % 4;
+            this.numberArr[row][col] = cardValue;
         }
         GetRandomNullIndex() {
             var arr = [];

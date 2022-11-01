@@ -17,15 +17,12 @@ export default class GameManager extends Laya.Script {
                 this.numberArr[i][j] = 0;
             }
         }
-        // console.log(this.numberArr);
-
-        this.CreateNumberCard();
-        this.CreateNumberCard();
+        console.log(this.numberArr);
 
         this.LoadTexture();
     }
     
-    LoadTexture(): void {
+    LoadTexture() {
         var resArr: Array<{url: string, type: string}> = [
             {url:"images/2048Atlas_2.png", type: Laya.Loader.IMAGE},
             {url:"images/2048Atlas_4.png", type: Laya.Loader.IMAGE},
@@ -42,23 +39,28 @@ export default class GameManager extends Laya.Script {
             {url:"images/2048Atlas_8192.png", type: Laya.Loader.IMAGE},
         ];
         Laya.loader.load(resArr, Laya.Handler.create(this, function(result: boolean){
-            console.log(result);
+            this.CreateNumberCard();
+            this.CreateNumberCard();
         }));
     }
 
 
-    // 记录空的格子
+    /**
+     * 生成卡片
+     * @returns 
+     */
     CreateNumberCard(): void {
         var index: number = this.GetRandomNullIndex();
         if (index == -1) {
             return 
         }
         var cell: Laya.Box = this.list.getCell(index);
-
-        var row: number = parseInt(String(index/4));
-        var col: number = index%4;
         
-        var dialog: Laya.Image = Laya.loader.getRes("images/2048Atlas_" + 2 + ".png");
+        var valueArr: number[] = [2, 4];
+        var cardValue: number = this.GetRandom(0, valueArr.length-1);
+
+        var dialog: Laya.Image = new Laya.Image("images/2048Atlas_" + cardValue + ".png");
+        // var dialog: Laya.Image = Laya.loader.getRes("images/2048Atlas_" + cardValue + ".png");   // getRes报错：<疑问>：返回的值类型是any，但不具有pos属性；
         Laya.stage.addChild(dialog);
         var point = this.list.localToGlobal(new Laya.Point(cell.x, cell.y));
 
@@ -68,10 +70,9 @@ export default class GameManager extends Laya.Script {
         // sprite.pos(cell.x, cell.y);
         // sprite.scale(1.8, 1.8);
 
-        // console.log("index:", index);
-        // console.log("row:", row);
-        // console.log("col:", col);
-        
+        var row: number = parseInt(String(index/4));
+        var col: number = index%4;
+        this.numberArr[row][col] = cardValue;
     }
 
     /**
