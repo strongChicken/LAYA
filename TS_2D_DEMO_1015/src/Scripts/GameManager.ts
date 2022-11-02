@@ -65,10 +65,9 @@ export default class GameManager extends Laya.Script {
         var point = this.list.localToGlobal(new Laya.Point(cell.x, cell.y));
 
         dialog.pos(point.x, point.y);
-        dialog.scale(1.2, 1.2);
-
-        // sprite.pos(cell.x, cell.y);
-        // sprite.scale(1.8, 1.8);
+        dialog.scale(0, 0);
+        // var carTween:Laya.Tween = new Laya.Tween.to(dialog, {scaleX: 1.2, scaleY: 1.2}, 100, Laya.Ease.quadInOut); // 报错：使用 "new" 关键字只能调用 void 函数
+        Laya.Tween.to(dialog, {scaleX: 1.2, scaleY: 1.2}, 100, Laya.Ease.quartInOut);
 
         var row: number = parseInt(String(index/4));
         var col: number = index%4;

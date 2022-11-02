@@ -47,11 +47,12 @@
             var cell = this.list.getCell(index);
             var valueArr = [2, 4];
             var cardValue = this.GetRandom(0, valueArr.length - 1);
-            var dialog = Laya.loader.getRes("images/2048Atlas_" + cardValue + ".png");
+            var dialog = new Laya.Image("images/2048Atlas_" + cardValue + ".png");
             Laya.stage.addChild(dialog);
             var point = this.list.localToGlobal(new Laya.Point(cell.x, cell.y));
             dialog.pos(point.x, point.y);
-            dialog.scale(1.2, 1.2);
+            dialog.scale(0, 0);
+            Laya.Tween.to(dialog, { scaleX: 1.2, scaleY: 1.2 }, 100, Laya.Ease.quadInOut);
             var row = parseInt(String(index / 4));
             var col = index % 4;
             this.numberArr[row][col] = cardValue;
