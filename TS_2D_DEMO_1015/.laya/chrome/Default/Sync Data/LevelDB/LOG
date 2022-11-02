@@ -1,2 +1,3 @@
-2022/10/25-23:40:53.271 5a94 Creating DB E:\LAYA\DEMO\TS_2D_DEMO_1015\.laya\chrome\Default\Sync Data\LevelDB since it was missing.
-2022/10/25-23:40:53.642 5a94 Reusing MANIFEST E:\LAYA\DEMO\TS_2D_DEMO_1015\.laya\chrome\Default\Sync Data\LevelDB/MANIFEST-000001
+2022/11/03-00:23:29.288 3f74 Reusing MANIFEST F:\LAYA\DEMO\TS_2D_DEMO_1015\.laya\chrome\Default\Sync Data\LevelDB/MANIFEST-000001
+2022/11/03-00:23:29.289 3f74 Recovering log #3
+2022/11/03-00:23:29.289 3f74 Reusing old log F:\LAYA\DEMO\TS_2D_DEMO_1015\.laya\chrome\Default\Sync Data\LevelDB/000003.log 

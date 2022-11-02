@@ -54,19 +54,23 @@ export default class GameManager extends Laya.Script {
         if (index == -1) {
             return 
         }
-        var cell: Laya.Box = this.list.getCell(index);
         
         var valueArr: number[] = [2, 4];
-        var cardValue: number = this.GetRandom(0, valueArr.length-1);
+        console.log("valueArr.length:", valueArr.length-1);
+        var cardValue: number = valueArr[this.GetRandom(0, valueArr.length-1)];
+        console.log("cardValue:", cardValue);
+
+        var cell: Laya.Box = this.list.getCell(index);
 
         var dialog: Laya.Image = new Laya.Image("images/2048Atlas_" + cardValue + ".png");
-        // var dialog: Laya.Image = Laya.loader.getRes("images/2048Atlas_" + cardValue + ".png");   // getRes报错：<疑问>：返回的值类型是any，但不具有pos属性；
+        // var imageSkin = Laya.loader.getRes("images/2048Atlas_" + cardValue + ".png");
+        // var dialog: Laya.Image = imageSkin.skin  // 报错
         Laya.stage.addChild(dialog);
         var point = this.list.localToGlobal(new Laya.Point(cell.x, cell.y));
 
         dialog.pos(point.x, point.y);
         dialog.scale(0, 0);
-        // var carTween:Laya.Tween = new Laya.Tween.to(dialog, {scaleX: 1.2, scaleY: 1.2}, 100, Laya.Ease.quadInOut); // 报错：使用 "new" 关键字只能调用 void 函数
+        // var carTween:Laya.Tween = new Laya.Tween.to(dialog, {scaleX: 1.2, scaleY: 1.2}, 100, Laya.Ease.quadInOut); // 报错：因为Tween.to返回的是一个对象，所以不需要new
         Laya.Tween.to(dialog, {scaleX: 1.2, scaleY: 1.2}, 100, Laya.Ease.quartInOut);
 
         var row: number = parseInt(String(index/4));

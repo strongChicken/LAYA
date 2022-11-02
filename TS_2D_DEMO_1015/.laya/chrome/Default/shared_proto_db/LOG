@@ -1,2 +1,3 @@
-2022/10/25-23:40:54.521 3904 Creating DB E:\LAYA\DEMO\TS_2D_DEMO_1015\.laya\chrome\Default\shared_proto_db since it was missing.
-2022/10/25-23:40:54.791 3904 Reusing MANIFEST E:\LAYA\DEMO\TS_2D_DEMO_1015\.laya\chrome\Default\shared_proto_db/MANIFEST-000001
+2022/11/03-00:23:29.385 3ae0 Reusing MANIFEST F:\LAYA\DEMO\TS_2D_DEMO_1015\.laya\chrome\Default\shared_proto_db/MANIFEST-000001
+2022/11/03-00:23:29.385 3ae0 Recovering log #3
+2022/11/03-00:23:29.385 3ae0 Reusing old log F:\LAYA\DEMO\TS_2D_DEMO_1015\.laya\chrome\Default\shared_proto_db/000003.log 
