@@ -1,12 +1,12 @@
 {
     "x":0,
     "type":"Scene",
-    "selectedBox":2,
-    "selecteID":6,
+    "selectedBox":9,
+    "selecteID":14,
     "searchKey":"Scene,test",
     "props":{"width":750,"var":"test","sceneColor":"#000000","height":1334},
     "nodeParent":-1,
-    "maxID":14,
+    "maxID":15,
     "label":"test",
     "isOpen":true,
     "isDirectory":true,
@@ -69,6 +69,20 @@
                                 ]
                         }],
                     "$HIDDEN":false
+                },
+                {
+                    "x":30,
+                    "type":"Sprite",
+                    "searchKey":"Sprite",
+                    "props":{"y":77,"x":77,"width":154,"texture":"images/2048Atlas_1.png","pivotY":77,"pivotX":77,"height":154},
+                    "nodeParent":9,
+                    "label":"Sprite",
+                    "isDirectory":false,
+                    "isAniNode":false,
+                    "hasChild":false,
+                    "compId":14,
+                    "child":[
+                        ]
                 }]
         },
         {

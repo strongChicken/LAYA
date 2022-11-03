@@ -68,8 +68,9 @@ export default class GameManager extends Laya.Script {
         Laya.stage.addChild(dialog);
         var point = this.list.localToGlobal(new Laya.Point(cell.x, cell.y));
 
-        dialog.pos(point.x, point.y);
+        dialog.pos(point.x+77, point.y+77);     // 77 是轴心便宜的数值
         dialog.scale(0, 0);
+        dialog.pivot(dialog.width/2, dialog.height/2);
         // var carTween:Laya.Tween = new Laya.Tween.to(dialog, {scaleX: 1.2, scaleY: 1.2}, 100, Laya.Ease.quadInOut); // 报错：因为Tween.to返回的是一个对象，所以不需要new
         Laya.Tween.to(dialog, {scaleX: 1.2, scaleY: 1.2}, 100, Laya.Ease.quartInOut);
 

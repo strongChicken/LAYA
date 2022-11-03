@@ -46,14 +46,15 @@
             }
             var valueArr = [2, 4];
             console.log("valueArr.length:", valueArr.length - 1);
-            var cardValue = this.GetRandom(0, valueArr.length - 1);
+            var cardValue = valueArr[this.GetRandom(0, valueArr.length - 1)];
             console.log("cardValue:", cardValue);
             var cell = this.list.getCell(index);
-            var dialog = new Laya.Image("images/2048Atlas_" + valueArr[cardValue] + ".png");
+            var dialog = new Laya.Image("images/2048Atlas_" + cardValue + ".png");
             Laya.stage.addChild(dialog);
             var point = this.list.localToGlobal(new Laya.Point(cell.x, cell.y));
-            dialog.pos(point.x, point.y);
+            dialog.pos(point.x + 77, point.y + 77);
             dialog.scale(0, 0);
+            dialog.pivot(dialog.width / 2, dialog.height / 2);
             Laya.Tween.to(dialog, { scaleX: 1.2, scaleY: 1.2 }, 100, Laya.Ease.quartInOut);
             var row = parseInt(String(index / 4));
             var col = index % 4;
