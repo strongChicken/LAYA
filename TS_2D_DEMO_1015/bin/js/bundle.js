@@ -45,13 +45,10 @@
                 return;
             }
             var valueArr = [2, 4];
-            console.log("valueArr.length:", valueArr.length - 1);
             var cardValue = valueArr[this.GetRandom(0, valueArr.length - 1)];
-            console.log("cardValue:", cardValue);
-            var cell = this.list.getCell(index);
             var dialog = new Laya.Image("images/2048Atlas_" + cardValue + ".png");
             Laya.stage.addChild(dialog);
-            var point = this.list.localToGlobal(new Laya.Point(cell.x, cell.y));
+            var point = this.GetGlobalPos(index);
             dialog.pos(point.x + 77, point.y + 77);
             dialog.scale(0, 0);
             dialog.pivot(dialog.width / 2, dialog.height / 2);
@@ -59,6 +56,11 @@
             var row = parseInt(String(index / 4));
             var col = index % 4;
             this.numberArr[row][col] = cardValue;
+        }
+        GetGlobalPos(index) {
+            var cell = this.list.getCell(index);
+            var point = this.list.localToGlobal(new Laya.Point(cell.x, cell.y));
+            return point;
         }
         GetRandomNullIndex() {
             var arr = [];

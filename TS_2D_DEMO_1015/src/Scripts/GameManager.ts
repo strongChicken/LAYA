@@ -56,19 +56,15 @@ export default class GameManager extends Laya.Script {
         }
         
         var valueArr: number[] = [2, 4];
-        console.log("valueArr.length:", valueArr.length-1);
         var cardValue: number = valueArr[this.GetRandom(0, valueArr.length-1)];
-        console.log("cardValue:", cardValue);
-
-        var cell: Laya.Box = this.list.getCell(index);
 
         var dialog: Laya.Image = new Laya.Image("images/2048Atlas_" + cardValue + ".png");
         // var imageSkin = Laya.loader.getRes("images/2048Atlas_" + cardValue + ".png");
         // var dialog: Laya.Image = imageSkin.skin  // 报错
         Laya.stage.addChild(dialog);
-        var point = this.list.localToGlobal(new Laya.Point(cell.x, cell.y));
 
-        dialog.pos(point.x+77, point.y+77);     // 77 是轴心便宜的数值
+        var point: Laya.Point = this.GetGlobalPos(index);
+        dialog.pos(point.x+77, point.y+77);     // 77 是轴心偏倚的数值
         dialog.scale(0, 0);
         dialog.pivot(dialog.width/2, dialog.height/2);
         // var carTween:Laya.Tween = new Laya.Tween.to(dialog, {scaleX: 1.2, scaleY: 1.2}, 100, Laya.Ease.quadInOut); // 报错：因为Tween.to返回的是一个对象，所以不需要new
@@ -80,7 +76,19 @@ export default class GameManager extends Laya.Script {
     }
 
     /**
-     * 随机获取空位置索引；
+     * 根据索引获取stage的全局坐标
+     * @param index 
+     * @returns 
+     */
+    GetGlobalPos(index: number): Laya.Point {
+        var cell: Laya.Box = this.list.getCell(index);
+        var point: Laya.Point = this.list.localToGlobal(new Laya.Point(cell.x, cell.y));
+        return point;
+    }
+
+
+    /**
+     * 获取随机空位置索引；
      * @returns ‘-1’数组=0；否则return随机空位置的‘索引’；
      */
     GetRandomNullIndex(): number {
