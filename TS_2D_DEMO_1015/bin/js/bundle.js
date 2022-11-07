@@ -46,6 +46,7 @@
             }
         }
         IsMoveRight() {
+            console.log("arr:", this.numberArr);
             for (let i = 3; i >= 0; i--) {
                 for (let j = 2; j >= 0; j--) {
                     if (this.numberArr[i][j] != 0) {
@@ -113,7 +114,6 @@
                     }
                 }
             }
-            console.log("arr:", arr);
             if (arr.length == 0) {
                 return -1;
             }

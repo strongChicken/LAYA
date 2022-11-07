@@ -66,19 +66,47 @@ export default class GameManager extends Laya.Script {
      * @returns 返回true，则可以向右移动；false，则不能；
      */
     IsMoveRight(): boolean {
+        console.log("arr:", this.numberArr);
         for (let i:number = 3; i>=0; i--) {
             for (let j:number = 2; j>=0; j--) {
                 if (this.numberArr[i][j] != 0) {
                     if (this.numberArr[i][j+1] == 0 || this.numberArr[i][j+1] == this.numberArr[i][j]){
-                        console.log("arrValue:", this.numberArr[i][j]);
-                        console.log("arrValue j+1:", this.numberArr[i][j+1]);
-                        console.log("arrValue j:", j);
+                        // console.log("arrValue:", this.numberArr[i][j]);
+                        // console.log("arrValue j+1:", this.numberArr[i][j+1]);
+                        // console.log("arrValue j:", j);
                         return true
                     }
                 }
             }
         }
         return false;
+    }
+    
+    MoveRight(): void {
+        for (let i:number = 3; i>=0; i--) {
+            for (let j:number = 2; j>=0; j--) {
+                if (this.numberArr[i][j] != 0) {
+                    for ( let k:number = 3; k>j; k--) {
+                        if (this.numberArr[i][k] != 0 && )
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * 判断两个数字之间是否包含其他数字；
+     * @param row 行的坐标
+     * @param j  遍历的index
+     * @param k 遍历的宽度
+     */
+    IsMoveRightMid(row:number, j:number ,k:number ): boolean {
+        for ( let i:number = j+1; i<k; i++) {
+            if (this.numberArr[row][i] != 0) {
+                return false
+            }
+        }
+        return true
     }
     
     LoadTexture() {
@@ -161,7 +189,6 @@ export default class GameManager extends Laya.Script {
             }
         }
         
-        console.log("arr:", arr);
 
         if (arr.length == 0) {
             return -1
