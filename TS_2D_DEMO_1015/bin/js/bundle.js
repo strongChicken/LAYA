@@ -4,6 +4,7 @@
     class GameManager extends Laya.Script {
         constructor() {
             super();
+            this.downPos = new Laya.Point;
             this.list = new Laya.List();
             this.list = null;
             this.numberArr = new Array(4);
@@ -15,8 +16,49 @@
                     this.numberArr[i][j] = 0;
                 }
             }
-            console.log(this.numberArr);
+            Laya.stage.on(Laya.Event.MOUSE_DOWN, this, this.mouseDown);
+            Laya.stage.on(Laya.Event.MOUSE_UP, this, this.mouseUp);
             this.LoadTexture();
+        }
+        mouseDown() {
+            this.downPos.x = Laya.stage.mouseX;
+            this.downPos.y = Laya.stage.mouseY;
+        }
+        mouseUp() {
+            var diffX = Laya.stage.mouseX - this.downPos.x;
+            var diffY = Laya.stage.mouseY - this.downPos.y;
+            if (diffX < 0 && Math.abs(diffX) > Math.abs(diffY)) {
+                console.log("left");
+            }
+            if (diffX > 0 && Math.abs(diffX) > Math.abs(diffY)) {
+                if (this.IsMoveRight() == true) {
+                    console.log("right");
+                }
+                else {
+                    console.log("cant right");
+                }
+            }
+            if (diffY < 0 && Math.abs(diffX) < Math.abs(diffY)) {
+                console.log("up");
+            }
+            if (diffY > 0 && Math.abs(diffX) < Math.abs(diffY)) {
+                console.log("down");
+            }
+        }
+        IsMoveRight() {
+            for (let i = 3; i >= 0; i--) {
+                for (let j = 2; j >= 0; j--) {
+                    if (this.numberArr[i][j] != 0) {
+                        if (this.numberArr[i][j + 1] == 0 || this.numberArr[i][j + 1] == this.numberArr[i][j]) {
+                            console.log("arrValue:", this.numberArr[i][j]);
+                            console.log("arrValue j+1:", this.numberArr[i][j + 1]);
+                            console.log("arrValue j:", j);
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
         }
         LoadTexture() {
             var resArr = [
@@ -71,6 +113,7 @@
                     }
                 }
             }
+            console.log("arr:", arr);
             if (arr.length == 0) {
                 return -1;
             }

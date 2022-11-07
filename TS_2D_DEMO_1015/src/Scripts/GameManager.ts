@@ -1,12 +1,15 @@
 export default class GameManager extends Laya.Script {
     // 定义二维数组
     numberArr: Array<Array<number>>;
+    downPos: Laya.Point = new Laya.Point;
+
     list = new Laya.List();
     constructor() {
         super();
         /** @prop {name: list, tips:"获取单元格",type:node} */
         this.list = null;
         this.numberArr = new Array<Array<number>>(4);
+        
     }
 
     onAwake(): void {
@@ -17,9 +20,65 @@ export default class GameManager extends Laya.Script {
                 this.numberArr[i][j] = 0;
             }
         }
-        console.log(this.numberArr);
+
+        Laya.stage.on(Laya.Event.MOUSE_DOWN, this, this.mouseDown);
+        Laya.stage.on(Laya.Event.MOUSE_UP, this, this.mouseUp);
 
         this.LoadTexture();
+    }
+
+    mouseDown() {
+        this.downPos.x = Laya.stage.mouseX;
+        this.downPos.y = Laya.stage.mouseY;
+    }
+
+    mouseUp() {
+        var diffX: number = Laya.stage.mouseX - this.downPos.x;
+        var diffY: number = Laya.stage.mouseY - this.downPos.y;
+
+        if (diffX < 0 && Math.abs(diffX) > Math.abs(diffY)){
+            console.log("left");
+        }
+
+        if (diffX > 0 && Math.abs(diffX) > Math.abs(diffY)){
+            if (this.IsMoveRight() == true) {
+                console.log("right");
+            } 
+            else 
+            {
+                console.log("cant right");
+            }
+        }
+
+        if (diffY < 0 && Math.abs(diffX) < Math.abs(diffY)){
+            console.log("up");
+        }
+
+        if (diffY > 0 && Math.abs(diffX) < Math.abs(diffY)){
+            console.log("down");
+        }
+
+
+    }
+
+    /**
+     * 遍历每一行的倒数第二列，是否有非零值（IDcard），再检测非零格右边是否满足移动条件；
+     * @returns 返回true，则可以向右移动；false，则不能；
+     */
+    IsMoveRight(): boolean {
+        for (let i:number = 3; i>=0; i--) {
+            for (let j:number = 2; j>=0; j--) {
+                if (this.numberArr[i][j] != 0) {
+                    if (this.numberArr[i][j+1] == 0 || this.numberArr[i][j+1] == this.numberArr[i][j]){
+                        console.log("arrValue:", this.numberArr[i][j]);
+                        console.log("arrValue j+1:", this.numberArr[i][j+1]);
+                        console.log("arrValue j:", j);
+                        return true
+                    }
+                }
+            }
+        }
+        return false;
     }
     
     LoadTexture() {
@@ -102,6 +161,8 @@ export default class GameManager extends Laya.Script {
             }
         }
         
+        console.log("arr:", arr);
+
         if (arr.length == 0) {
             return -1
         }
