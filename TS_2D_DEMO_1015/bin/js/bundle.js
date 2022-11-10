@@ -8,12 +8,19 @@
             this.list = new Laya.List();
             this.list = null;
             this.numberArr = new Array(4);
+            this.cardArr = new Array(4);
         }
         onAwake() {
             for (let i = 0; i < 4; i++) {
                 this.numberArr[i] = new Array(4);
                 for (let j = 0; j < 4; j++) {
                     this.numberArr[i][j] = 0;
+                }
+            }
+            for (let i = 0; i < 4; i++) {
+                this.cardArr[i] = new Array(4);
+                for (let j = 0; j < 4; j++) {
+                    this.cardArr[i][j] = null;
                 }
             }
             Laya.stage.on(Laya.Event.MOUSE_DOWN, this, this.mouseDown);
@@ -31,7 +38,9 @@
                 console.log("left");
             }
             if (diffX > 0 && Math.abs(diffX) > Math.abs(diffY)) {
-                if (this.IsMoveRight() == true) {
+                if (this.IsMoveRight()) {
+                    this.MoveRight();
+                    this.CreateNumberCard();
                     console.log("right");
                 }
                 else {
@@ -51,15 +60,45 @@
                 for (let j = 2; j >= 0; j--) {
                     if (this.numberArr[i][j] != 0) {
                         if (this.numberArr[i][j + 1] == 0 || this.numberArr[i][j + 1] == this.numberArr[i][j]) {
-                            console.log("arrValue:", this.numberArr[i][j]);
-                            console.log("arrValue j+1:", this.numberArr[i][j + 1]);
-                            console.log("arrValue j:", j);
                             return true;
                         }
                     }
                 }
             }
             return false;
+        }
+        MoveRight() {
+            for (let i = 3; i >= 0; i--) {
+                for (let j = 2; j >= 0; j--) {
+                    if (this.numberArr[i][j] != 0) {
+                        for (let k = 3; k > j; k--) {
+                            if (this.numberArr[i][k] == 0 && this.IsMoveRightMid(i, j, k)) {
+                                if (this.cardArr[i][j] != null) {
+                                    this.cardArr[i][k] = this.cardArr[i][j];
+                                    this.cardArr[i][j] = null;
+                                    var point = this.GetGlobalPos(i * 4 + k);
+                                    Laya.Tween.to(this.cardArr[i][k], { x: point.x + 77, y: point.y + 77 }, Math.abs(point.x - this.cardArr[i][k].x) / 10);
+                                }
+                                this.numberArr[i][k] = this.numberArr[i][j];
+                                this.numberArr[i][j] = 0;
+                                continue;
+                            }
+                            if (this.numberArr[i][k] == this.numberArr[i][j] && this.IsMoveRightMid(i, j, k)) {
+                                this.numberArr[i][k] *= 2;
+                                this.numberArr[i][j] = 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        IsMoveRightMid(row, j, k) {
+            for (let i = j + 1; i < k; i++) {
+                if (this.numberArr[row][i] != 0) {
+                    return false;
+                }
+            }
+            return true;
         }
         LoadTexture() {
             var resArr = [
@@ -99,6 +138,7 @@
             var row = parseInt(String(index / 4));
             var col = index % 4;
             this.numberArr[row][col] = cardValue;
+            this.cardArr[row][col] = dialog;
         }
         GetGlobalPos(index) {
             var cell = this.list.getCell(index);

@@ -1,6 +1,7 @@
 export default class GameManager extends Laya.Script {
     // 定义二维数组
     numberArr: Array<Array<number>>;
+    cardArr: Array<Array<Laya.Image>>;
     downPos: Laya.Point = new Laya.Point;
 
     list = new Laya.List();
@@ -8,7 +9,8 @@ export default class GameManager extends Laya.Script {
         super();
         /** @prop {name: list, tips:"获取单元格",type:node} */
         this.list = null;
-        this.numberArr = new Array<Array<number>>(4);
+        this.numberArr = new Array<Array<number>>(4); 
+        this.cardArr = new Array<Array<Laya.Image>>(4);
         
     }
 
@@ -16,8 +18,15 @@ export default class GameManager extends Laya.Script {
         // 初始化二维数组
         for(let i=0; i<4; i++) {
             this.numberArr[i] = new Array<number>(4);
-            for (let j=0; j<4; j++ ){
+            for (let j=0; j<4; j++ ) {
                 this.numberArr[i][j] = 0;
+            }
+        }
+
+        for(let i=0; i<4; i++) {
+            this.cardArr[i] = new Array<Laya.Image>(4);
+            for (let j=0; j<4; j++) {
+                this.cardArr[i][j] = null;
             }
         }
 
@@ -41,7 +50,9 @@ export default class GameManager extends Laya.Script {
         }
 
         if (diffX > 0 && Math.abs(diffX) > Math.abs(diffY)){
-            if (this.IsMoveRight() == true) {
+            if (this.IsMoveRight()) {
+                this.MoveRight();
+                this.CreateNumberCard();
                 console.log("right");
             } 
             else 
@@ -71,9 +82,6 @@ export default class GameManager extends Laya.Script {
             for (let j:number = 2; j>=0; j--) {
                 if (this.numberArr[i][j] != 0) {
                     if (this.numberArr[i][j+1] == 0 || this.numberArr[i][j+1] == this.numberArr[i][j]){
-                        // console.log("arrValue:", this.numberArr[i][j]);
-                        // console.log("arrValue j+1:", this.numberArr[i][j+1]);
-                        // console.log("arrValue j:", j);
                         return true
                     }
                 }
@@ -87,7 +95,26 @@ export default class GameManager extends Laya.Script {
             for (let j:number = 2; j>=0; j--) {
                 if (this.numberArr[i][j] != 0) {
                     for ( let k:number = 3; k>j; k--) {
-                        if (this.numberArr[i][k] != 0 && )
+                        // 交换处理
+                        if (this.numberArr[i][k] == 0 && this.IsMoveRightMid(i, j, k)) 
+                        {
+                            if (this.cardArr[i][j] != null)
+                            {
+                                this.cardArr[i][k] = this.cardArr[i][j];
+                                this.cardArr[i][j] = null;
+                                var point: Laya.Point = this.GetGlobalPos(i*4+k);
+                                Laya.Tween.to(this.cardArr[i][k], {x: point.x+77, y:point.y+77}, Math.abs(point.x - this.cardArr[i][k].x)/10);
+                            }
+                            this.numberArr[i][k] = this.numberArr[i][j];
+                            this.numberArr[i][j] = 0;
+                            continue;
+                        }
+                        // 合并处理
+                        if (this.numberArr[i][k] == this.numberArr[i][j] && this.IsMoveRightMid(i, j, k))
+                        {
+                            this.numberArr[i][k]*=2;
+                            this.numberArr[i][j] = 0;
+                        }
                     }
                 }
             }
@@ -95,7 +122,7 @@ export default class GameManager extends Laya.Script {
     }
 
     /**
-     * 判断两个数字之间是否包含其他数字；
+     * 判断两个数字之间是否包含其他数字；true则是不含其他数字
      * @param row 行的坐标
      * @param j  遍历的index
      * @param k 遍历的宽度
@@ -160,6 +187,7 @@ export default class GameManager extends Laya.Script {
         var row: number = parseInt(String(index/4));
         var col: number = index%4;
         this.numberArr[row][col] = cardValue;
+        this.cardArr[row][col] = dialog;
     }
 
     /**
