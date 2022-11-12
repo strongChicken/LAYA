@@ -103,7 +103,7 @@ export default class GameManager extends Laya.Script {
                                 this.cardArr[i][k] = this.cardArr[i][j];
                                 this.cardArr[i][j] = null;
                                 var point: Laya.Point = this.GetGlobalPos(i*4+k);
-                                Laya.Tween.to(this.cardArr[i][k], {x: point.x+77, y:point.y+77}, Math.abs(point.x - this.cardArr[i][k].x)/10);
+                                Laya.Tween.to(this.cardArr[i][k], {x: point.x+77, y:point.y+77}, Math.abs(point.x - this.cardArr[i][k].x));
                             }
                             this.numberArr[i][k] = this.numberArr[i][j];
                             this.numberArr[i][j] = 0;
@@ -114,11 +114,32 @@ export default class GameManager extends Laya.Script {
                         {
                             this.numberArr[i][k]*=2;
                             this.numberArr[i][j] = 0;
+                            if (this.cardArr[i][k] != null && this.cardArr[i][j] != null) {
+                                this.cardArr[i][k].destroy();
+                                this.cardArr[i][k] = this.cardArr[i][j];
+                                this.cardArr[i][j] = null;
+                                // 改变[i][j]的数字图片
+                                var point = this.GetGlobalPos(i*4+k);
+                                Laya.Tween.to(this.cardArr[i][k], {x:point.x+77, y:point.y+77}, Math.abs(point.x - this.cardArr[i][k].x)/10, null, 
+                                Laya.Handler.create(this, this.ChangeImage, [i, k]));
+                            }
                         }
                     }
                 }
             }
         }
+    }
+
+    /**
+     * 替换图片资源
+     * @param row 
+     * @param col 
+     */
+    ChangeImage (row:number, col:number){
+        console.log("numberArr[row][col]:", this.numberArr[row][col]);  // this.numberArr[row][col] 返回的数值是正确的
+        this.cardArr[row][col] = new Laya.Image("images/2048Atlas_" + this.numberArr[row][col] + ".png");   // 返回的图片不对，或者没有返回图片
+        Laya.stage.addChild(this.cardArr[row][col]);
+        console.log(this.cardArr[row][col]);
     }
 
     /**
@@ -173,8 +194,6 @@ export default class GameManager extends Laya.Script {
         var cardValue: number = valueArr[this.GetRandom(0, valueArr.length-1)];
 
         var dialog: Laya.Image = new Laya.Image("images/2048Atlas_" + cardValue + ".png");
-        // var imageSkin = Laya.loader.getRes("images/2048Atlas_" + cardValue + ".png");
-        // var dialog: Laya.Image = imageSkin.skin  // 报错
         Laya.stage.addChild(dialog);
 
         var point: Laya.Point = this.GetGlobalPos(index);

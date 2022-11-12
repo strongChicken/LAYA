@@ -77,7 +77,7 @@
                                     this.cardArr[i][k] = this.cardArr[i][j];
                                     this.cardArr[i][j] = null;
                                     var point = this.GetGlobalPos(i * 4 + k);
-                                    Laya.Tween.to(this.cardArr[i][k], { x: point.x + 77, y: point.y + 77 }, Math.abs(point.x - this.cardArr[i][k].x) / 10);
+                                    Laya.Tween.to(this.cardArr[i][k], { x: point.x + 77, y: point.y + 77 }, Math.abs(point.x - this.cardArr[i][k].x));
                                 }
                                 this.numberArr[i][k] = this.numberArr[i][j];
                                 this.numberArr[i][j] = 0;
@@ -86,11 +86,25 @@
                             if (this.numberArr[i][k] == this.numberArr[i][j] && this.IsMoveRightMid(i, j, k)) {
                                 this.numberArr[i][k] *= 2;
                                 this.numberArr[i][j] = 0;
+                                if (this.cardArr[i][k] != null && this.cardArr[i][j] != null) {
+                                    this.cardArr[i][k].destroy();
+                                    this.cardArr[i][k] = this.cardArr[i][j];
+                                    this.cardArr[i][j] = null;
+                                    var point = this.GetGlobalPos(i * 4 + k);
+                                    Laya.Tween.to(this.cardArr[i][k], { x: point.x + 77, y: point.y + 77 }, Math.abs(point.x - this.cardArr[i][k].x) / 10, null, Laya.Handler.create(this, this.ChangeImage, [i, k]));
+                                }
                             }
                         }
                     }
                 }
             }
+        }
+        ChangeImage(row, col) {
+            console.log("numberArr[row][col]:", this.numberArr[row][col]);
+            this.cardArr[row][col] = new Laya.Image("images/2048Atlas_" + this.numberArr[row][col] + ".png");
+            Laya.stage.addChild(this.cardArr[row][col]);
+            console.log(this.cardArr[row][col]);
+            console.log(this.cardArr[row][col].texture);
         }
         IsMoveRightMid(row, j, k) {
             for (let i = j + 1; i < k; i++) {
