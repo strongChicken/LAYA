@@ -46,7 +46,11 @@ export default class GameManager extends Laya.Script {
         var diffY: number = Laya.stage.mouseY - this.downPos.y;
 
         if (diffX < 0 && Math.abs(diffX) > Math.abs(diffY)){
-            console.log("left");
+            if (this.IsMoveLeft()) {
+                this.MoveLeft();
+                this.CreateNumberCard();
+                console.log("left");
+            }
         }
 
         if (diffX > 0 && Math.abs(diffX) > Math.abs(diffY)){
@@ -62,14 +66,20 @@ export default class GameManager extends Laya.Script {
         }
 
         if (diffY < 0 && Math.abs(diffX) < Math.abs(diffY)){
+
             console.log("up");
         }
 
         if (diffY > 0 && Math.abs(diffX) < Math.abs(diffY)){
-            console.log("down");
+            console.log("IsMoveRight:", this.IsMoveRight());
+            if (this.IsMoveDown()) {
+                this.MoveDown();
+                this.CreateNumberCard();
+                console.log("down");    
+            }
         }
 
-
+        Laya.stage.event("gameove");
     }
 
     /**
@@ -77,7 +87,6 @@ export default class GameManager extends Laya.Script {
      * @returns 返回true，则可以向右移动；false，则不能；
      */
     IsMoveRight(): boolean {
-        console.log("arr:", this.numberArr);
         for (let i:number = 3; i>=0; i--) {
             for (let j:number = 2; j>=0; j--) {
                 if (this.numberArr[i][j] != 0) {
@@ -89,7 +98,40 @@ export default class GameManager extends Laya.Script {
         }
         return false;
     }
+
+    /**
+     * 逻辑和IsMoveLeft相同
+     * @returns 
+     */
+    IsMoveLeft(): boolean {
+        for (let i:number = 3; i>=0; i--) {
+            for (let j:number = 1; j<=3; j++) {
+                if (this.numberArr[i][j] != 0) {
+                    if (this.numberArr[i][j-1] == 0 || this.numberArr[i][j-1] == this.numberArr[i][j]){
+                        return true
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    IsMoveDown(): boolean {
+        for (let j:number = 3; j>=0; j--) {
+            for (let i:number = 2; i>=0; i--) {
+                if (this.numberArr[i][j] != 0) {
+                    if (this.numberArr[i][j+1] == 0 || this.numberArr[i+1][j] == this.numberArr[i][j]){
+                        return true
+                    }
+                }
+            }
+        }
+        return false;
+    }
     
+    /**
+     * i 是行，j是列
+     */
     MoveRight(): void {
         for (let i:number = 3; i>=0; i--) {
             for (let j:number = 2; j>=0; j--) {
@@ -98,30 +140,78 @@ export default class GameManager extends Laya.Script {
                         // 交换处理
                         if (this.numberArr[i][k] == 0 && this.IsMoveRightMid(i, j, k)) 
                         {
-                            if (this.cardArr[i][j] != null)
-                            {
-                                this.cardArr[i][k] = this.cardArr[i][j];
-                                this.cardArr[i][j] = null;
-                                var point: Laya.Point = this.GetGlobalPos(i*4+k);
-                                Laya.Tween.to(this.cardArr[i][k], {x: point.x+77, y:point.y+77}, Math.abs(point.x - this.cardArr[i][k].x));
-                            }
-                            this.numberArr[i][k] = this.numberArr[i][j];
-                            this.numberArr[i][j] = 0;
+                            this.Horizontal_Func1(i, j, k); 
                             continue;
                         }
                         // 合并处理
                         if (this.numberArr[i][k] == this.numberArr[i][j] && this.IsMoveRightMid(i, j, k))
                         {
-                            this.numberArr[i][k]*=2;
+                            this.Horizontal_Func2(i, j, k);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    MoveLeft(): void {
+        for (let i:number = 3; i>=0; i--) {
+            for (let j:number = 0; j<=3; j++) {
+                if (this.numberArr[i][j] != 0) {
+                    for ( let k:number = 0; k<j; k++) {
+                        // 交换处理
+                        if (this.numberArr[i][k] == 0 && this.IsMoveRightMid(i, j, k)) 
+                        {
+                            this.Horizontal_Func1(i, j, k);
+                            continue;
+                        }
+                        // 合并处理
+                        if (this.numberArr[i][k] == this.numberArr[i][j] && this.IsMoveRightMid(i, j, k))
+                        {
+                            this.Horizontal_Func2(i, j, k);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * 向下移动
+     */
+    MoveDown(): void {
+        console.log("arr:", this.numberArr);
+        for (let j:number = 3; j>=0; j--) {
+            for (let i:number = 0; i<=3; i++) {
+                if (this.numberArr[i][j] != 0) {
+                    for ( let k:number = 3; k>i; k--) {
+                        // 交换处理  k是行
+                        if (this.numberArr[k][j] == 0 && this.IsMoveDownMid(j, i, k)) 
+                        {
+                            if (this.cardArr[i][j] != null)
+                            {
+                                this.cardArr[k][j] = this.cardArr[j][i];
+                                this.cardArr[i][j] = null;
+                                var point: Laya.Point = this.GetGlobalPos(k*4+j);
+                                Laya.Tween.to(this.cardArr[k][j], {x: point.x+77, y:point.y+77}, Math.abs(point.x - this.cardArr[k][j].x)/10);
+                            }
+                            this.numberArr[k][j] = this.numberArr[i][j];
                             this.numberArr[i][j] = 0;
-                            if (this.cardArr[i][k] != null && this.cardArr[i][j] != null) {
-                                this.cardArr[i][k].destroy();
-                                this.cardArr[i][k] = this.cardArr[i][j];
+                            continue;
+                        }
+                        // 合并处理
+                        if (this.numberArr[k][j] == this.numberArr[i][j] && this.IsMoveDownMid(i, j, k))
+                        {
+                            this.numberArr[k][j]*=2;
+                            this.numberArr[i][j] = 0;
+                            if (this.cardArr[i][j] != null && this.cardArr[k][j] != null) {
+                                this.cardArr[k][j].destroy();
+                                this.cardArr[k][j] = this.cardArr[i][j];
                                 this.cardArr[i][j] = null;
                                 // 改变[i][j]的数字图片
-                                var point = this.GetGlobalPos(i*4+k);
-                                Laya.Tween.to(this.cardArr[i][k], {x:point.x+77, y:point.y+77}, Math.abs(point.x - this.cardArr[i][k].x)/10, null, 
-                                Laya.Handler.create(this, this.ChangeImage, [i, k]));
+                                var point = this.GetGlobalPos(k*4+j);
+                                Laya.Tween.to(this.cardArr[k][j], {x:point.x+77, y:point.y+77}, Math.abs(point.x - this.cardArr[k][j].x)/10, null, 
+                                Laya.Handler.create(this, this.ChangeImage, [k, j]));
                             }
                         }
                     }
@@ -137,6 +227,7 @@ export default class GameManager extends Laya.Script {
      */
     ChangeImage (row:number, col:number){
         console.log("numberArr[row][col]:", this.numberArr[row][col]);  // this.numberArr[row][col] 返回的数值是正确的
+        this.cardArr[row][col].destroy();
         this.cardArr[row][col] = new Laya.Image("images/2048Atlas_" + this.numberArr[row][col] + ".png");   // 返回的图片不对，或者没有返回图片
         Laya.stage.addChild(this.cardArr[row][col]);
         console.log(this.cardArr[row][col]);
@@ -155,6 +246,54 @@ export default class GameManager extends Laya.Script {
             }
         }
         return true
+    }
+
+    IsMoveLeftMid(row:number, j:number ,k:number ): boolean {
+        for ( let i:number = j-1; i>k; i--) {
+            if (this.numberArr[row][i] != 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+    IsMoveDownMid(row:number, j:number ,k:number ): boolean {
+        // 这个循环需要注意
+        for ( let i:number = row+1; i<k; i++) {
+            if (this.numberArr[i][j] != 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+    Horizontal_Func1(i:number, j:number, k:number): void {
+        if (this.numberArr[i][k] == 0 && this.IsMoveRightMid(i, j, k)) 
+        {
+            if (this.cardArr[i][j] != null)
+            {
+                this.cardArr[i][k] = this.cardArr[i][j];
+                this.cardArr[i][j] = null;
+                var point: Laya.Point = this.GetGlobalPos(i*4+k);
+                Laya.Tween.to(this.cardArr[i][k], {x: point.x+77, y:point.y+77}, Math.abs(point.x - this.cardArr[i][k].x));
+            }
+        this.numberArr[i][k] = this.numberArr[i][j];
+        this.numberArr[i][j] = 0;
+        }
+    }
+
+    Horizontal_Func2(i:number, j:number, k:number): void {
+        this.numberArr[i][k]*=2;
+        this.numberArr[i][j] = 0;
+        if (this.cardArr[i][k] != null && this.cardArr[i][j] != null) {
+            this.cardArr[i][k].destroy();
+            this.cardArr[i][k] = this.cardArr[i][j];
+            this.cardArr[i][j] = null;
+            // 改变[i][j]的数字图片
+            var point = this.GetGlobalPos(i*4+k);
+            Laya.Tween.to(this.cardArr[i][k], {x:point.x+77, y:point.y+77}, Math.abs(point.x - this.cardArr[i][k].x)/10, null, 
+            Laya.Handler.create(this, this.ChangeImage, [i, k]));
+        }
     }
     
     LoadTexture() {
