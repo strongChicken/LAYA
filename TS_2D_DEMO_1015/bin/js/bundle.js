@@ -11,6 +11,7 @@
             this.cardArr = new Array(4);
         }
         onAwake() {
+            console.log(Laya.stage);
             for (let i = 0; i < 4; i++) {
                 this.numberArr[i] = new Array(4);
                 for (let j = 0; j < 4; j++) {
@@ -62,6 +63,7 @@
                     console.log("down");
                 }
             }
+            Laya.stage.event("gameove");
         }
         IsMoveRight() {
             for (let i = 3; i >= 0; i--) {
@@ -168,9 +170,7 @@
         }
         ChangeImage(row, col) {
             console.log("numberArr[row][col]:", this.numberArr[row][col]);
-            this.cardArr[row][col].destroy();
-            this.cardArr[row][col] = new Laya.Image("images/2048Atlas_" + this.numberArr[row][col] + ".png");
-            Laya.stage.addChild(this.cardArr[row][col]);
+            this.cardArr[row][col].skin = Laya.loader.getRes("images/2048Atlas_" + this.numberArr[row][col] + ".png");
             console.log(this.cardArr[row][col]);
         }
         IsMoveRightMid(row, j, k) {

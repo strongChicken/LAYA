@@ -1,39 +1,85 @@
 export default class GameManager extends Laya.Script {
     // 定义二维数组
-    numberArr: Array<Array<number>>;
-    cardArr: Array<Array<Laya.Image>>;
-    downPos: Laya.Point = new Laya.Point;
+    // numberArr: Array<Array<number>>;
+    // cardArr: Array<Array<Laya.Image>>;
+    // downPos: Laya.Point = new Laya.Point;
+    // list = new Laya.List();
 
-    list = new Laya.List();
+    /** @prop {name: list, tips:"获取单元格",type:node} */
+    list = null;
+
+    /** @prop {name: txt_Score, tips:"游戏得分",type:node} */    
+    txt_Score = null;
+
+    score:number = 0;
+    numberArr = new Array(4); 
+    cardArr = new Array(4);
+    downPos = new Laya.Point(0,0);
+    gameOver:boolean = false;
+
+    // gameOver:boolean;
+    // txt_Score: Laya.Stage;  // todo 等待转换ts语法修改
     constructor() {
         super();
-        /** @prop {name: list, tips:"获取单元格",type:node} */
-        this.list = null;
-        this.numberArr = new Array<Array<number>>(4); 
-        this.cardArr = new Array<Array<Laya.Image>>(4);
+
+
+
+
         
     }
 
     onAwake(): void {
+        console.log(Laya.stage);
         // 初始化二维数组
         for(let i=0; i<4; i++) {
             this.numberArr[i] = new Array<number>(4);
-            for (let j=0; j<4; j++ ) {
+            for(let j=0; j<4; j++ ) {
                 this.numberArr[i][j] = 0;
             }
         }
 
         for(let i=0; i<4; i++) {
             this.cardArr[i] = new Array<Laya.Image>(4);
-            for (let j=0; j<4; j++) {
+            for(let j=0; j<4; j++) {
                 this.cardArr[i][j] = null;
             }
         }
 
         Laya.stage.on(Laya.Event.MOUSE_DOWN, this, this.mouseDown);
         Laya.stage.on(Laya.Event.MOUSE_UP, this, this.mouseUp);
+        Laya.stage.on("Restart", this, this.Restart);
 
         this.LoadTexture();
+    }
+
+    AddScore(value:number):void {
+        this.score += value;
+        this.txt_Score.text = this.score;
+    }
+
+    /**
+     * 重新游戏
+     */
+    Restart():void {
+        this.gameOver = false;
+        for(let i=0; i<4; i++) {
+            this.numberArr[i] = new Array<number>(4);
+            for(let j=0; j<4; j++ ) {
+                this.numberArr[i][j] = 0;
+            }
+        }
+
+        for(let i=0; i<4; i++) {
+            this.cardArr[i] = new Array<Laya.Image>(4);
+            for(let j=0; j<4; j++) {
+                if(this.cardArr[i][j] != null) {
+                    this.cardArr[i][j].destroy();
+                    this.cardArr[i][j] = null;
+                }
+            }
+        }
+        this.CreateNumberCard();
+        this.CreateNumberCard();
     }
 
     mouseDown() {
@@ -42,6 +88,7 @@ export default class GameManager extends Laya.Script {
     }
 
     mouseUp() {
+        if(this.gameOver)return;
         var diffX: number = Laya.stage.mouseX - this.downPos.x;
         var diffY: number = Laya.stage.mouseY - this.downPos.y;
 
@@ -71,7 +118,6 @@ export default class GameManager extends Laya.Script {
         }
 
         if (diffY > 0 && Math.abs(diffX) < Math.abs(diffY)){
-            console.log("IsMoveRight:", this.IsMoveRight());
             if (this.IsMoveDown()) {
                 this.MoveDown();
                 this.CreateNumberCard();
@@ -79,7 +125,8 @@ export default class GameManager extends Laya.Script {
             }
         }
 
-        Laya.stage.event("gameove");
+        Laya.timer.once(10000, this, function(){Laya.stage.event("gameove");});
+        // this.gameOver = true;
     }
 
     /**
@@ -227,9 +274,8 @@ export default class GameManager extends Laya.Script {
      */
     ChangeImage (row:number, col:number){
         console.log("numberArr[row][col]:", this.numberArr[row][col]);  // this.numberArr[row][col] 返回的数值是正确的
-        this.cardArr[row][col].destroy();
-        this.cardArr[row][col] = new Laya.Image("images/2048Atlas_" + this.numberArr[row][col] + ".png");   // 返回的图片不对，或者没有返回图片
-        Laya.stage.addChild(this.cardArr[row][col]);
+        this.cardArr[row][col].skin = Laya.loader.getRes("images/2048Atlas_" + this.numberArr[row][col] + ".png");   // 返回的图片不对，或者没有返回图片
+        // Laya.stage.addChild(this.cardArr[row][col]);
         console.log(this.cardArr[row][col]);
     }
 
@@ -333,7 +379,7 @@ export default class GameManager extends Laya.Script {
         var cardValue: number = valueArr[this.GetRandom(0, valueArr.length-1)];
 
         var dialog: Laya.Image = new Laya.Image("images/2048Atlas_" + cardValue + ".png");
-        Laya.stage.addChild(dialog);
+        Laya.stage.addChild(dialog);    // 这里需要使用stage.addChildAt()，但不清楚第一个参数；
 
         var point: Laya.Point = this.GetGlobalPos(index);
         dialog.pos(point.x+77, point.y+77);     // 77 是轴心偏倚的数值
