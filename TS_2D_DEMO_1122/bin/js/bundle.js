@@ -1,10 +1,73 @@
 (function () {
     'use strict';
 
+    class StartPanel extends Laya.Script {
+        constructor() {
+            super();
+        }
+        onAwake() {
+            this.owner.getChildByName("btn_start").on(Laya.Event.CLICK, this, this.StartButtonClick);
+            this.owner.getChildByName("btn_shop").on(Laya.Event.CLICK, this, this.ShopButtonClick);
+        }
+        StartButtonClick() {
+            console.log("start");
+        }
+        ShopButtonClick() {
+            console.log("shop");
+        }
+    }
+
+    class DataManage extends Laya.Script {
+        constructor() {
+            super();
+            this.coinCount = Number(Laya.LocalStorage.getItem("CoinCount"));
+            if (Laya.LocalStorage.getItem("CoinCount") == null) {
+                this.coinCount = 10;
+            }
+        }
+        static Instance() {
+            if (this.instance == null) {
+                this.instance = new DataManage();
+            }
+            return this.instance;
+        }
+        getCoinCount() {
+            console.log("getCoinCount:", this.coinCount);
+            return this.coinCount;
+        }
+        addCoinCount(value = 1) {
+            this.coinCount++;
+            Laya.LocalStorage.setItem("CoinCount", String(this.coinCount));
+        }
+    }
+
+    class ShopPanel extends Laya.Script {
+        constructor() {
+            super();
+        }
+        onAwake() {
+            this.Init();
+            this.readConfigFile();
+        }
+        Init() {
+            this.txt_coin = new Laya.Text();
+            console.log("txt_coin:", DataManage.Instance().getCoinCount());
+            this.txt_coin.text = String(DataManage.Instance().getCoinCount());
+            console.log("text:", this.txt_coin.text);
+        }
+        readConfigFile() {
+            let XmlRead = Laya.loader.load("res/CharactersSkin.csv", Laya.Handler.create(this, function (configFile) {
+                console.log(configFile);
+            }));
+        }
+    }
+
     class GameConfig {
         constructor() { }
         static init() {
             var reg = Laya.ClassUtils.regClass;
+            reg("scripts/StartPanel.ts", StartPanel);
+            reg("scripts/ShopPanel.ts", ShopPanel);
         }
     }
     GameConfig.width = 1920;
@@ -13,7 +76,7 @@
     GameConfig.screenMode = "none";
     GameConfig.alignV = "middle";
     GameConfig.alignH = "center";
-    GameConfig.startScene = "startScene.scene";
+    GameConfig.startScene = "StartScene.scene";
     GameConfig.sceneRoot = "";
     GameConfig.debug = false;
     GameConfig.stat = false;

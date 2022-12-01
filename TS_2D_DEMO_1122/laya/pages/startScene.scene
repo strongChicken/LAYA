@@ -2,11 +2,10 @@
     "x":0,
     "type":"Scene",
     "selectedBox":2,
-    "selecteID":7,
     "searchKey":"Scene",
     "props":{"width":1920,"sceneColor":"#000000","height":1080},
     "nodeParent":-1,
-    "maxID":10,
+    "maxID":30,
     "label":"Scene",
     "isOpen":true,
     "isDirectory":true,
@@ -17,22 +16,21 @@
         {
             "x":15,
             "type":"Sprite",
-            "searchKey":"Sprite,StartPanel",
-            "props":{"name":"StartPanel"},
+            "searchKey":"Sprite,startPanel",
+            "props":{"name":"startPanel"},
             "nodeParent":2,
-            "label":"StartPanel",
-            "isOpen":true,
+            "label":"startPanel",
+            "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
-            "compId":7,
+            "compId":9,
             "child":[
                 {
-                    "x":30,
                     "type":"Image",
                     "searchKey":"Image,bg",
                     "props":{"y":0,"x":0,"width":1920,"skin":"User Interface/bg02.png","name":"bg","height":1080},
-                    "nodeParent":7,
+                    "nodeParent":9,
                     "label":"bg",
                     "isDirectory":false,
                     "isAniNode":true,
@@ -42,11 +40,10 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Image",
                     "searchKey":"Image,title",
-                    "props":{"y":198,"x":0,"width":832,"skin":"User Interface/Tittle.png","name":"title","height":383},
-                    "nodeParent":7,
+                    "props":{"y":290,"x":0,"width":799,"skin":"User Interface/Tittle.png","name":"title","height":369},
+                    "nodeParent":9,
                     "label":"title",
                     "isDirectory":false,
                     "isAniNode":true,
@@ -56,50 +53,295 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Button",
-                    "searchKey":"Button,btn_Start",
-                    "props":{"y":330,"x":1316,"width":533,"stateNum":"1","skin":"User Interface/btn02.png","name":"btn_Start","labelSize":30,"label":"Start Game","height":140},
-                    "nodeParent":7,
-                    "label":"btn_Start",
+                    "searchKey":"Button,btn_start",
+                    "props":{"y":406,"x":1314,"width":530,"stateNum":"1","skin":"User Interface/btn02.png","name":"btn_start","labelSize":40,"label":"开始游戏","height":137},
+                    "nodeParent":9,
+                    "label":"btn_start",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
-                    "compId":5,
+                    "compId":7,
+                    "child":[
+                        ]
+                },
+                {
+                    "type":"Button",
+                    "searchKey":"Button,btn_shop",
+                    "props":{"y":576,"x":1357,"width":444,"stateNum":"1","skin":"User Interface/btn02.png","name":"btn_shop","labelSize":40,"label":"进入商店","height":83},
+                    "nodeParent":9,
+                    "label":"btn_shop",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":8,
+                    "child":[
+                        ]
+                },
+                {
+                    "type":"Script",
+                    "switchAble":true,
+                    "source":"src/scripts/StartPanel.ts",
+                    "searchKey":"Script,StartPanel",
+                    "removeAble":true,
+                    "props":{},
+                    "nodeParent":9,
+                    "label":"StartPanel",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":10,
+                    "child":[
+                        ]
+                }]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "searchKey":"Sprite,shopPanel",
+            "props":{"name":"shopPanel"},
+            "nodeParent":2,
+            "label":"shopPanel",
+            "isOpen":true,
+            "isDirectory":true,
+            "isAniNode":true,
+            "hasChild":true,
+            "compId":17,
+            "child":[
+                {
+                    "x":30,
+                    "type":"Image",
+                    "searchKey":"Image,bg",
+                    "props":{"y":0,"x":0,"width":1920,"skin":"User Interface/bg01.png","name":"bg","height":1080},
+                    "nodeParent":17,
+                    "label":"bg",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":11,
                     "child":[
                         ]
                 },
                 {
                     "x":30,
+                    "type":"Image",
+                    "searchKey":"Image,coin",
+                    "props":{"y":12,"x":16,"width":99,"skin":"User Interface/op2.png","name":"coin","height":99},
+                    "nodeParent":17,
+                    "label":"coin",
+                    "isOpen":true,
+                    "isDirectory":true,
+                    "isAniNode":true,
+                    "hasChild":true,
+                    "compId":12,
+                    "child":[
+                        {
+                            "x":45,
+                            "type":"Text",
+                            "searchKey":"Text,txt_coin",
+                            "props":{"y":0,"x":99,"width":293,"valign":"middle","text":"0","name":"txt_coin","height":97,"fontSize":90,"color":"#e2e2e2","align":"center"},
+                            "nodeParent":12,
+                            "label":"txt_coin",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":13,
+                            "child":[
+                                ]
+                        }]
+                },
+                {
+                    "x":30,
+                    "type":"Image",
+                    "searchKey":"Image,prop",
+                    "props":{"y":0,"x":542,"skin":"User Interface/RibonTitle.png","name":"prop"},
+                    "nodeParent":17,
+                    "label":"prop",
+                    "isOpen":false,
+                    "isDirectory":true,
+                    "isAniNode":true,
+                    "hasChild":true,
+                    "compId":14,
+                    "child":[
+                        {
+                            "type":"Text",
+                            "searchKey":"Text,txt_prop",
+                            "props":{"y":11,"x":117,"width":580,"valign":"middle","text":"道具","name":"txt_prop","height":89,"fontSize":80,"align":"center"},
+                            "nodeParent":14,
+                            "label":"txt_prop",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":15,
+                            "child":[
+                                ]
+                        }]
+                },
+                {
+                    "x":30,
                     "type":"Button",
-                    "searchKey":"Button,btn_Shop",
-                    "props":{"y":540,"x":1370,"width":452,"stateNum":"1","skin":"User Interface/btn02.png","name":"btn_Shop","labelSize":30,"label":"Shop","height":119},
-                    "nodeParent":7,
-                    "label":"btn_Shop",
+                    "searchKey":"Button,btn_menu",
+                    "props":{"y":17,"x":1797,"width":102,"stateNum":"1","skin":"User Interface/MenuBtn.png","name":"btn_menu","label":"label","height":102},
+                    "nodeParent":17,
+                    "label":"btn_menu",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
-                    "compId":6,
+                    "compId":16,
                     "child":[
                         ]
+                },
+                {
+                    "x":30,
+                    "type":"List",
+                    "searchKey":"List,lst_skin",
+                    "props":{"y":257,"x":278.5,"spaceX":150,"repeatX":3,"name":"lst_skin"},
+                    "nodeParent":17,
+                    "label":"lst_skin",
+                    "isOpen":false,
+                    "isDirectory":true,
+                    "isAniNode":true,
+                    "hasChild":true,
+                    "compId":26,
+                    "child":[
+                        {
+                            "type":"Box",
+                            "searchKey":"Box,box_skin",
+                            "props":{"renderType":"render","name":"box_skin"},
+                            "nodeParent":26,
+                            "label":"box_skin",
+                            "isOpen":true,
+                            "isDirectory":true,
+                            "isAniNode":false,
+                            "hasChild":true,
+                            "compId":24,
+                            "child":[
+                                {
+                                    "type":"Image",
+                                    "searchKey":"Image,bg_skin",
+                                    "props":{"skin":"User Interface/boxStat.png","name":"bg_skin"},
+                                    "nodeParent":24,
+                                    "label":"bg_skin",
+                                    "isOpen":false,
+                                    "isDirectory":true,
+                                    "isAniNode":false,
+                                    "hasChild":true,
+                                    "compId":18,
+                                    "child":[
+                                        {
+                                            "type":"Image",
+                                            "searchKey":"Image,img_skin",
+                                            "props":{"y":175.5,"x":38.5,"width":270,"skin":"CharacterSkin/1.png","name":"img_skin","height":270},
+                                            "nodeParent":18,
+                                            "label":"img_skin",
+                                            "isOpen":true,
+                                            "isDirectory":false,
+                                            "isAniNode":false,
+                                            "hasChild":false,
+                                            "compId":19,
+                                            "child":[
+                                                ]
+                                        },
+                                        {
+                                            "type":"Image",
+                                            "searchKey":"Image,img_choice",
+                                            "props":{"y":41,"x":201,"skin":"User Interface/YesBtn.png","name":"img_choice"},
+                                            "nodeParent":18,
+                                            "label":"img_choice",
+                                            "isDirectory":false,
+                                            "isAniNode":false,
+                                            "hasChild":false,
+                                            "compId":20,
+                                            "child":[
+                                                ]
+                                        },
+                                        {
+                                            "type":"Image",
+                                            "searchKey":"Image",
+                                            "props":{"y":504,"x":68,"width":78,"skin":"Items/Coin/1.png","height":81},
+                                            "nodeParent":18,
+                                            "label":"Image",
+                                            "isOpen":true,
+                                            "isDirectory":true,
+                                            "isAniNode":false,
+                                            "hasChild":true,
+                                            "compId":21,
+                                            "child":[
+                                                {
+                                                    "type":"Text",
+                                                    "searchKey":"Text,txt_price",
+                                                    "props":{"y":13,"x":70,"width":187,"valign":"middle","text":"9999","name":"txt_price","height":55,"fontSize":40,"color":"#e0e0e0","align":"left"},
+                                                    "nodeParent":21,
+                                                    "label":"txt_price",
+                                                    "isDirectory":false,
+                                                    "isAniNode":false,
+                                                    "hasChild":false,
+                                                    "compId":22,
+                                                    "child":[
+                                                        ]
+                                                }]
+                                        },
+                                        {
+                                            "type":"Text",
+                                            "searchKey":"Text,txt_name",
+                                            "props":{"y":428,"x":75.5,"width":196,"valign":"middle","text":"name","name":"txt_name","height":68,"fontSize":70,"color":"#e5e5e5","align":"center"},
+                                            "nodeParent":18,
+                                            "label":"txt_name",
+                                            "isDirectory":false,
+                                            "isAniNode":false,
+                                            "hasChild":false,
+                                            "compId":23,
+                                            "child":[
+                                                ]
+                                        }]
+                                }]
+                        }]
                 },
                 {
                     "x":30,
                     "type":"Script",
                     "switchAble":true,
-                    "source":"src/scrpts/Start Panel.ts",
-                    "searchKey":"Script,Start Panel",
+                    "source":"src/scripts/ShopPanel.ts",
+                    "searchKey":"Script,ShopPanel",
                     "removeAble":true,
-                    "props":{},
-                    "nodeParent":7,
-                    "label":"Start Panel",
+                    "props":{"txt_Coin":"@node:13"},
+                    "nodeParent":17,
+                    "label":"ShopPanel",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
-                    "compId":9,
+                    "compId":29,
                     "child":[
                         ]
                 }]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "searchKey":"Button,btn_left",
+            "props":{"y":449,"x":50,"width":118,"stateNum":"1","skin":"User Interface/LeftArrow.png","name":"btn_left","height":182},
+            "nodeParent":2,
+            "label":"btn_left",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":27,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "searchKey":"Button,btn_right",
+            "props":{"y":449,"x":1714,"width":118,"stateNum":"1","skin":"User Interface/RightArrow.png","name":"btn_right","height":182},
+            "nodeParent":2,
+            "label":"btn_right",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":28,
+            "child":[
+                ]
         }],
     "animations":[
         {

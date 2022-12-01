@@ -1,0 +1,9 @@
+id,fiileName,price,path
+1,name1,200,res/CharacterSkin/1.png
+2,name2,500,"""res/CharacterSkin/2.png"""
+3,name3,20,"""res/CharacterSkin/3.png"""
+4,name4,600,"""res/CharacterSkin/4.png"""
+5,name5,100,"""res/CharacterSkin/5.png"""
+6,name6,230,"""res/CharacterSkin/6.png"""
+7,name7,130,"""res/CharacterSkin/7.png"""
+8,name8,150,"""res/CharacterSkin/8.png"""
