@@ -2,6 +2,7 @@
     "x":0,
     "type":"Scene",
     "selectedBox":2,
+    "selecteID":17,
     "searchKey":"Scene",
     "props":{"width":1920,"sceneColor":"#000000","height":1080},
     "nodeParent":-1,
@@ -138,8 +139,8 @@
                         {
                             "x":45,
                             "type":"Text",
-                            "searchKey":"Text,txt_coin",
-                            "props":{"y":0,"x":99,"width":293,"valign":"middle","text":"0","name":"txt_coin","height":97,"fontSize":90,"color":"#e2e2e2","align":"center"},
+                            "searchKey":"Text,txt_coin,txt_coin",
+                            "props":{"y":0,"x":99,"width":293,"var":"txt_coin","valign":"middle","text":"0","name":"txt_coin","height":97,"fontSize":90,"color":"#e2e2e2","align":"center"},
                             "nodeParent":12,
                             "label":"txt_coin",
                             "isDirectory":false,
@@ -296,23 +297,6 @@
                                         }]
                                 }]
                         }]
-                },
-                {
-                    "x":30,
-                    "type":"Script",
-                    "switchAble":true,
-                    "source":"src/scripts/ShopPanel.ts",
-                    "searchKey":"Script,ShopPanel",
-                    "removeAble":true,
-                    "props":{"txt_Coin":"@node:13"},
-                    "nodeParent":17,
-                    "label":"ShopPanel",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":29,
-                    "child":[
-                        ]
                 }]
         },
         {

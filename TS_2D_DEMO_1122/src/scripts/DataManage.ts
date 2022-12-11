@@ -23,7 +23,6 @@ export default class DataManage extends Laya.Script {
      * @returns type:numberm, tips:金币数量
      */
     getCoinCount(): number {
-        console.log("getCoinCount:", this.coinCount)
         return this.coinCount;
     }
 

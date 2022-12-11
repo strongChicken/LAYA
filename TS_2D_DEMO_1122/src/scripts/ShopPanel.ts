@@ -1,22 +1,20 @@
 import DataManage from "./DataManage";
+import { ui } from "../ui/layaMaxUI";
 
-export default class ShopPanel extends Laya.Script {
-    /** @prop {name: txt_Coin, tip:"金币显示文本", type:Node, default:null} */
-    txt_coin: Laya.Text;
+export default class ShopPanel extends ui.shopPanelUI {
     constructor() {
         super();
+
     }
 
-    onAwake(): void {  // 试过onStart，onEnable也不行
+
+    onAwake(): void {
         this.Init();
         this.readConfigFile();
     }
     
     Init(): void {
-        this.txt_coin = new Laya.Text();
-        console.log("txt_coin:", DataManage.Instance().getCoinCount());     // 10
-        this.txt_coin.text = String(DataManage.Instance().getCoinCount());  // BUG：无法显示
-        console.log("text:", this.txt_coin.text);   // 10
+        this.txt_coin.text = String(DataManage.Instance().getCoinCount)
     }
 
 
@@ -25,4 +23,6 @@ export default class ShopPanel extends Laya.Script {
             console.log(configFile);
         }))
     }
+
+
 }

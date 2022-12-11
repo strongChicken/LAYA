@@ -1,4 +1,6 @@
 import GameConfig from "./GameConfig";
+import ShopPanel from "./scripts/ShopPanel";
+import StartPanel from "./scripts/StartPanel";
 class Main {
 	constructor() {
 		//根据IDE设置初始化引擎		
@@ -30,7 +32,8 @@ class Main {
 
 	onConfigLoaded(): void {
 		//加载IDE指定的场景
-		GameConfig.startScene && Laya.Scene.open(GameConfig.startScene);
+		// GameConfig.startScene && Laya.Scene.open(GameConfig.startScene);
+		Laya.stage.addChild(new ShopPanel());
 	}
 }
 //激活启动类
