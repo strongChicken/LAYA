@@ -14,7 +14,7 @@ export default class ShopPanel extends ui.shopPanelUI {
     }
     
     Init(): void {
-        this.txt_coin.text = String(DataManage.Instance().getCoinCount)
+        this.txt_coin.text = (DataManage.Instance().getCoinCount()).toString();
     }
 
 
