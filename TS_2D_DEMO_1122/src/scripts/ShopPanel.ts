@@ -1,46 +1,33 @@
 import DataManage from "./DataManage";
 import { ui } from "../ui/layaMaxUI";
+import { fgui } from "../../bin/fgui/fairygui";
 
 export default class ShopPanel extends ui.StartSceneUI {
+    private _view: fgui.GComponent;
+
     constructor() {
         super();
-
+        fgui.UIPackage.addPackage("res/UI/02-Shop", Laya.Handler.create(this, this.onUILoaded));;
     }
 
 
     onAwake(): void {
-        this.Init();
-        this.readConfigFile();
+        this.initWallet();
+    }
+
+
+    onUILoaded():void {
+        this._view = fgui.UIPackage.createObject("02-Shop", "shop").asCom;
+        fgui.GRoot.inst.addChild(this._view);
+    }
+
+    destroy(): void {
+        fgui.UIPackage.removePackage("02-shop");
     }
     
-    Init(): void {
-        this.txt_coin.text = (DataManage.Instance().getCoinCount()).toString();
-        this.shopSkin();
-    }
-
-    readConfigFile(): void {
-
-        let xmlDom = Laya.loader.load(
-            "res/CharactersSkinXml.xml", 
-            null, 
-            null,
-            Laya.Loader.XML,
-            )
-        console.log("xmlDom", xmlDom);
-        // let xmlDom = Laya.Utils.parseXMLFromString(_Res);
-
-    }
-
-    /**
-     * 设置商品list的属性；
-     */
-    shopSkin(): void {
-        this.lst_skin.repeatX = 3;
-        this.lst_skin.spaceX = 450;
-        this.lst_skin.selectedIndex = -1;
-
-        this.lst_skin.elasticEnabled = false;
-        this.lst_skin.selectEnable = true;
-        this.lst_skin.visible = true;
+    initWallet(): void {
+        // this.txt_coin.text = (DataManage.Instance().getCoinCount()).toString();
+        this._view.getChild("txt_wallet").text = (DataManage.Instance().getCoinCount()).toString();
+        
     }
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="gh9y6ori">
+  <resources>
+    <component id="tds40" name="Background.xml" path="/02-sub/" exported="true"/>
+    <image id="vqps9" name="Repeated.png" path="/00-image/"/>
+    <component id="vqps1" name="StartGame.xml" path="/01-button/"/>
+    <component id="vqps2" name="Shop.xml" path="/01-button/"/>
+  </resources>
+  <publish name="" genCode="true" codePath="F:\LAYA\DEMO\TS_2D_DEMO_1122\UIproject"/>
+</packageDescription>

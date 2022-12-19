@@ -1,0 +1,3 @@
+    onAwake(): void {
+        this.Init();
+    }

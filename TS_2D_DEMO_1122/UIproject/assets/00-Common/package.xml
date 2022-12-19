@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="gt4zqqx9">
+  <resources>
+    <image id="vqps0" name="Layer1.png" path="/Background/1/"/>
+    <image id="vqps1" name="Layer2.png" path="/Background/1/"/>
+    <image id="vqps2" name="Repeated.png" path="/Background/1/"/>
+    <image id="vqps3" name="Layer01.png" path="/Background/2/"/>
+    <image id="vqps4" name="Layer02.png" path="/Background/2/"/>
+    <image id="vqps5" name="Repeated.png" path="/Background/2/"/>
+    <image id="vqps6" name="Layer01.png" path="/Background/3/"/>
+    <image id="vqps7" name="Layer02.png" path="/Background/3/"/>
+    <image id="vqps8" name="Layer03.png" path="/Background/3/"/>
+    <image id="vqpsa" name="Layer01.png" path="/Background/4/"/>
+    <image id="vqpsb" name="Layer02.png" path="/Background/4/"/>
+    <image id="vqpsc" name="Repeated.png" path="/Background/4/"/>
+    <image id="vqpsd" name="1.png" path="/Characters/1/Die/"/>
+    <image id="vqpse" name="6.png" path="/Characters/6/Walk/"/>
+    <image id="vqpsf" name="5.png" path="/Characters/6/Walk/"/>
+    <image id="vqpsg" name="4.png" path="/Characters/6/Walk/"/>
+    <image id="vqpsh" name="3.png" path="/Characters/6/Walk/"/>
+    <image id="vqpsi" name="2.png" path="/Characters/6/Walk/"/>
+    <image id="vqpsj" name="1.png" path="/Characters/6/Walk/"/>
+    <image id="vqpsk" name="4.png" path="/Characters/6/Fly/"/>
+    <image id="vqpsl" name="3.png" path="/Characters/6/Fly/"/>
+    <image id="vqpsm" name="2.png" path="/Characters/6/Fly/"/>
+    <image id="vqpsn" name="1.png" path="/Characters/6/Fly/"/>
+    <image id="vqpso" name="8.png" path="/Characters/5/Walk/"/>
+    <image id="vqpsp" name="7.png" path="/Characters/6/Walk/"/>
+    <image id="vqpsq" name="7.png" path="/Characters/5/Walk/"/>
+    <image id="vqpsr" name="5.png" path="/Characters/5/Walk/"/>
+    <image id="vqpss" name="4.png" path="/Characters/5/Walk/"/>
+    <image id="vqpst" name="3.png" path="/Characters/5/Walk/"/>
+    <image id="vqpsu" name="2.png" path="/Characters/5/Walk/"/>
+    <image id="vqpsv" name="1.png" path="/Characters/5/Walk/"/>
+    <image id="vqpsw" name="4.png" path="/Characters/5/Fly/"/>
+    <image id="vqpsx" name="3.png" path="/Characters/5/Fly/"/>
+    <image id="vqpsy" name="2.png" path="/Characters/5/Fly/"/>
+    <image id="vqpsz" name="1.png" path="/Characters/5/Fly/"/>
+    <image id="vqps10" name="8.png" path="/Characters/4/Walk/"/>
+    <image id="vqps11" name="7.png" path="/Characters/4/Walk/"/>
+    <image id="vqps12" name="6.png" path="/Characters/5/Walk/"/>
+    <image id="vqps13" name="6.png" path="/Characters/4/Walk/"/>
+    <image id="vqps14" name="8.png" path="/Characters/6/Walk/"/>
+    <image id="vqps15" name="2.png" path="/Characters/7/Fly/"/>
+    <image id="vqps16" name="2.png" path="/Characters/Smoke/"/>
+    <image id="vqps17" name="1.png" path="/Characters/Smoke/"/>
+    <image id="vqps18" name="8.png" path="/Characters/8/Walk/"/>
+    <image id="vqps19" name="7.png" path="/Characters/8/Walk/"/>
+    <image id="vqps1a" name="6.png" path="/Characters/8/Walk/"/>
+    <image id="vqps1b" name="5.png" path="/Characters/8/Walk/"/>
+    <image id="vqps1c" name="4.png" path="/Characters/8/Walk/"/>
+    <image id="vqps1d" name="3.png" path="/Characters/8/Walk/"/>
+    <image id="vqps1e" name="2.png" path="/Characters/8/Walk/"/>
+    <image id="vqps1f" name="1.png" path="/Characters/8/Walk/"/>
+    <image id="vqps1g" name="4.png" path="/Characters/8/Fly/"/>
+    <image id="vqps1h" name="1.png" path="/Characters/7/Fly/"/>
+    <image id="vqps1i" name="3.png" path="/Characters/8/Fly/"/>
+    <image id="vqps1j" name="1.png" path="/Characters/8/Fly/"/>
+    <image id="vqps1k" name="8.png" path="/Characters/7/Walk/"/>
+    <image id="vqps1l" name="7.png" path="/Characters/7/Walk/"/>
+    <image id="vqps1m" name="6.png" path="/Characters/7/Walk/"/>
+    <image id="vqps1n" name="5.png" path="/Characters/7/Walk/"/>
+    <image id="vqps1o" name="4.png" path="/Characters/7/Walk/"/>
+    <image id="vqps1p" name="3.png" path="/Characters/7/Walk/"/>
+    <image id="vqps1q" name="2.png" path="/Characters/7/Walk/"/>
+    <image id="vqps1r" name="1.png" path="/Characters/7/Walk/"/>
+    <image id="vqps1s" name="4.png" path="/Characters/7/Fly/"/>
+    <image id="vqps1t" name="3.png" path="/Characters/7/Fly/"/>
+    <image id="vqps1u" name="2.png" path="/Characters/8/Fly/"/>
+    <image id="vqps1v" name="3.png" path="/Characters/Smoke/"/>
+    <image id="vqps1w" name="5.png" path="/Characters/4/Walk/"/>
+    <image id="vqps1x" name="3.png" path="/Characters/4/Walk/"/>
+    <image id="vqps1y" name="2.png" path="/Characters/2/Fly/"/>
+    <image id="vqps1z" name="1.png" path="/Characters/2/Fly/"/>
+    <image id="vqps20" name="8.png" path="/Characters/1/Walk/"/>
+    <image id="vqps21" name="7.png" path="/Characters/1/Walk/"/>
+    <image id="vqps22" name="6.png" path="/Characters/1/Walk/"/>
+    <image id="vqps23" name="5.png" path="/Characters/1/Walk/"/>
+    <image id="vqps24" name="4.png" path="/Characters/1/Walk/"/>
+    <image id="vqps25" name="3.png" path="/Characters/1/Walk/"/>
+    <image id="vqps26" name="2.png" path="/Characters/1/Walk/"/>
+    <image id="vqps27" name="1.png" path="/Characters/1/Walk/"/>
+    <image id="vqps28" name="3.png" path="/Characters/1/Jump/"/>
+    <image id="vqps29" name="3.png" path="/Characters/2/Fly/"/>
+    <image id="vqps2a" name="2.png" path="/Characters/1/Jump/"/>
+    <image id="vqps2b" name="4.png" path="/Characters/1/Idle/"/>
+    <image id="vqps2c" name="3.png" path="/Characters/1/Idle/"/>
+    <image id="vqps2d" name="2.png" path="/Characters/1/Idle/"/>
+    <image id="vqps2e" name="1.png" path="/Characters/1/Idle/"/>
+    <image id="vqps2f" name="4.png" path="/Characters/1/Fly/"/>
+    <image id="vqps2g" name="3.png" path="/Characters/1/Fly/"/>
+    <image id="vqps2h" name="2.png" path="/Characters/1/Fly/"/>
+    <image id="vqps2i" name="1.png" path="/Characters/1/Fly/"/>
+    <image id="vqps2j" name="4.png" path="/Characters/1/Die/"/>
+    <image id="vqps2k" name="3.png" path="/Characters/1/Die/"/>
+    <image id="vqps2l" name="2.png" path="/Characters/1/Die/"/>
+    <image id="vqps2m" name="1.png" path="/Characters/1/Jump/"/>
+    <image id="vqps2n" name="4.png" path="/Characters/4/Walk/"/>
+    <image id="vqps2o" name="4.png" path="/Characters/2/Fly/"/>
+    <image id="vqps2p" name="2.png" path="/Characters/2/Walk/"/>
+    <image id="vqps2q" name="2.png" path="/Characters/4/Walk/"/>
+    <image id="vqps2r" name="1.png" path="/Characters/4/Walk/"/>
+    <image id="vqps2s" name="4.png" path="/Characters/4/Fly/"/>
+    <image id="vqps2t" name="3.png" path="/Characters/4/Fly/"/>
+    <image id="vqps2u" name="2.png" path="/Characters/4/Fly/"/>
+    <image id="vqps2v" name="1.png" path="/Characters/4/Fly/"/>
+    <image id="vqps2w" name="8.png" path="/Characters/3/Walk/"/>
+    <image id="vqps2x" name="7.png" path="/Characters/3/Walk/"/>
+    <image id="vqps2y" name="6.png" path="/Characters/3/Walk/"/>
+    <image id="vqps2z" name="5.png" path="/Characters/3/Walk/"/>
+    <image id="vqps30" name="4.png" path="/Characters/3/Walk/"/>
+    <image id="vqps31" name="1.png" path="/Characters/2/Walk/"/>
+    <image id="vqps32" name="3.png" path="/Characters/3/Walk/"/>
+    <image id="vqps33" name="1.png" path="/Characters/3/Walk/"/>
+    <image id="vqps34" name="4.png" path="/Characters/3/Fly/"/>
+    <image id="vqps35" name="3.png" path="/Characters/3/Fly/"/>
+    <image id="vqps36" name="2.png" path="/Characters/3/Fly/"/>
+    <image id="vqps37" name="1.png" path="/Characters/3/Fly/"/>
+    <image id="vqps38" name="8.png" path="/Characters/2/Walk/"/>
+    <image id="vqps39" name="7.png" path="/Characters/2/Walk/"/>
+    <image id="vqps3a" name="6.png" path="/Characters/2/Walk/"/>
+    <image id="vqps3b" name="5.png" path="/Characters/2/Walk/"/>
+    <image id="vqps3c" name="4.png" path="/Characters/2/Walk/"/>
+    <image id="vqps3d" name="3.png" path="/Characters/2/Walk/"/>
+    <image id="vqps3e" name="2.png" path="/Characters/3/Walk/"/>
+    <image id="vqps3f" name="4.png" path="/Characters/Smoke/"/>
+    <image id="vqps3g" name="1.png" path="/CharacterSkin/" exported="true"/>
+    <image id="vqps3h" name="2.png" path="/CharacterSkin/" exported="true"/>
+    <image id="vqps3i" name="3.png" path="/CharacterSkin/" exported="true"/>
+    <image id="vqps3j" name="4.png" path="/CharacterSkin/" exported="true"/>
+    <image id="vqps3k" name="5.png" path="/CharacterSkin/" exported="true"/>
+    <image id="vqps3l" name="6.png" path="/CharacterSkin/" exported="true"/>
+    <image id="vqps3m" name="7.png" path="/CharacterSkin/" exported="true"/>
+    <image id="vqps3n" name="8.png" path="/CharacterSkin/" exported="true"/>
+    <image id="vqps3o" name="1.png" path="/Collision FX/1/"/>
+    <image id="vqps3p" name="5.png" path="/Collision FX/3/"/>
+    <image id="vqps3q" name="4.png" path="/Collision FX/3/"/>
+    <image id="vqps3r" name="3.png" path="/Collision FX/3/"/>
+    <image id="vqps3s" name="2.png" path="/Collision FX/3/"/>
+    <image id="vqps3t" name="1.png" path="/Collision FX/3/"/>
+    <image id="vqps3u" name="7.png" path="/Collision FX/2/"/>
+    <image id="vqps3v" name="6.png" path="/Collision FX/2/"/>
+    <image id="vqps3w" name="5.png" path="/Collision FX/2/"/>
+    <image id="vqps3x" name="4.png" path="/Collision FX/2/"/>
+    <image id="vqps3y" name="3.png" path="/Collision FX/2/"/>
+    <image id="vqps3z" name="2.png" path="/Collision FX/2/"/>
+    <image id="vqps40" name="1.png" path="/Collision FX/2/"/>
+    <image id="vqps41" name="8.png" path="/Collision FX/1/"/>
+    <image id="vqps42" name="7.png" path="/Collision FX/1/"/>
+    <image id="vqps43" name="6.png" path="/Collision FX/1/"/>
+    <image id="vqps44" name="5.png" path="/Collision FX/1/"/>
+    <image id="vqps45" name="4.png" path="/Collision FX/1/"/>
+    <image id="vqps46" name="3.png" path="/Collision FX/1/"/>
+    <image id="vqps47" name="2.png" path="/Collision FX/1/"/>
+    <image id="vqps48" name="6.png" path="/Collision FX/3/"/>
+    <image id="vqps49" name="7.png" path="/Collision FX/3/"/>
+    <image id="vqps4a" name="btn_close.png" path="/comp/"/>
+    <image id="vqps4b" name="img_bg3.png" path="/comp/"/>
+    <image id="vqps4c" name="img_bg4.png" path="/comp/"/>
+    <image id="vqps4d" name="img_bg5.png" path="/comp/"/>
+    <image id="vqps4e" name="img_blank.png" path="/comp/"/>
+    <image id="vqps4f" name="label.png" path="/comp/"/>
+    <image id="vqps4g" name="progress$bar.png" path="/comp/"/>
+    <image id="vqps4h" name="progress.png" path="/comp/"/>
+    <image id="vqps4i" name="img_bg2.png" path="/comp/"/>
+    <image id="vqps4j" name="radio.png" path="/comp/"/>
+    <image id="vqps4k" name="tab.png" path="/comp/"/>
+    <image id="vqps4l" name="textarea.png" path="/comp/"/>
+    <image id="vqps4m" name="textinput.png" path="/comp/"/>
+    <image id="vqps4n" name="vscroll$bar.png" path="/comp/"/>
+    <image id="vqps4o" name="vscroll$down.png" path="/comp/"/>
+    <image id="vqps4p" name="vscroll$up.png" path="/comp/"/>
+    <image id="vqps4q" name="vscroll.png" path="/comp/"/>
+    <image id="vqps4r" name="radiogroup.png" path="/comp/"/>
+    <image id="vqps4s" name="vslider$bar.png" path="/comp/"/>
+    <image id="vqps4t" name="img_bg.png" path="/comp/"/>
+    <image id="vqps4u" name="html.png" path="/comp/"/>
+    <image id="vqps4v" name="button.png" path="/comp/"/>
+    <image id="vqps4w" name="checkbox.png" path="/comp/"/>
+    <image id="vqps4x" name="check_circle.png" path="/comp/"/>
+    <image id="vqps4y" name="clip_num.png" path="/comp/"/>
+    <image id="vqps4z" name="clip_tree_arrow.png" path="/comp/"/>
+    <image id="vqps50" name="clip_tree_folder.png" path="/comp/"/>
+    <image id="vqps51" name="colorPicker.png" path="/comp/"/>
+    <image id="vqps52" name="image.png" path="/comp/"/>
+    <image id="vqps53" name="combobox.png" path="/comp/"/>
+    <image id="vqps54" name="fontClip_num.png" path="/comp/"/>
+    <image id="vqps55" name="hscroll$bar.png" path="/comp/"/>
+    <image id="vqps56" name="hscroll$down.png" path="/comp/"/>
+    <image id="vqps57" name="hscroll$up.png" path="/comp/"/>
+    <image id="vqps58" name="hscroll.png" path="/comp/"/>
+    <image id="vqps59" name="hslider$bar.png" path="/comp/"/>
+    <image id="vqps5a" name="hslider.png" path="/comp/"/>
+    <image id="vqps5b" name="fontClip.png" path="/comp/"/>
+    <image id="vqps5c" name="vslider.png" path="/comp/"/>
+    <image id="vqps5d" name="1.png" path="/Enemy/1/"/>
+    <image id="vqps5e" name="8.png" path="/Enemy/3/"/>
+    <image id="vqps5f" name="1.png" path="/Enemy/4/"/>
+    <image id="vqps5g" name="2.png" path="/Enemy/4/"/>
+    <image id="vqps5h" name="3.png" path="/Enemy/4/"/>
+    <image id="vqps5i" name="4.png" path="/Enemy/4/"/>
+    <image id="vqps5j" name="1.png" path="/Enemy/5/"/>
+    <image id="vqps5k" name="2.png" path="/Enemy/5/"/>
+    <image id="vqps5l" name="3.png" path="/Enemy/5/"/>
+    <image id="vqps5m" name="4.png" path="/Enemy/5/"/>
+    <image id="vqps5n" name="1.png" path="/Enemy/6/"/>
+    <image id="vqps5o" name="2.png" path="/Enemy/6/"/>
+    <image id="vqps5p" name="3.png" path="/Enemy/6/"/>
+    <image id="vqps5q" name="4.png" path="/Enemy/6/"/>
+    <image id="vqps5r" name="1.png" path="/Enemy/7/"/>
+    <image id="vqps5s" name="2.png" path="/Enemy/7/"/>
+    <image id="vqps5t" name="3.png" path="/Enemy/7/"/>
+    <image id="vqps5u" name="4.png" path="/Enemy/7/"/>
+    <image id="vqps5v" name="1.png" path="/Enemy/8/"/>
+    <image id="vqps5w" name="2.png" path="/Enemy/8/"/>
+    <image id="vqps5x" name="3.png" path="/Enemy/8/"/>
+    <image id="vqps5y" name="4.png" path="/Enemy/8/"/>
+    <image id="vqps5z" name="1.png" path="/Enemy/9/"/>
+    <image id="vqps60" name="2.png" path="/Enemy/9/"/>
+    <image id="vqps61" name="7.png" path="/Enemy/3/"/>
+    <image id="vqps62" name="6.png" path="/Enemy/3/"/>
+    <image id="vqps63" name="5.png" path="/Enemy/3/"/>
+    <image id="vqps64" name="4.png" path="/Enemy/3/"/>
+    <image id="vqps65" name="2.png" path="/Enemy/1/"/>
+    <image id="vqps66" name="3.png" path="/Enemy/1/"/>
+    <image id="vqps67" name="4.png" path="/Enemy/1/"/>
+    <image id="vqps68" name="5.png" path="/Enemy/1/"/>
+    <image id="vqps69" name="6.png" path="/Enemy/1/"/>
+    <image id="vqps6a" name="7.png" path="/Enemy/1/"/>
+    <image id="vqps6b" name="8.png" path="/Enemy/1/"/>
+    <image id="vqps6c" name="Enemy01_upShoot.png" path="/Enemy/1/"/>
+    <image id="vqps6d" name="1.png" path="/Enemy/10/"/>
+    <image id="vqps6e" name="2.png" path="/Enemy/10/"/>
+    <image id="vqps6f" name="3.png" path="/Enemy/10/"/>
+    <image id="vqps6g" name="3.png" path="/Enemy/9/"/>
+    <image id="vqps6h" name="4.png" path="/Enemy/10/"/>
+    <image id="vqps6i" name="2.png" path="/Enemy/2/"/>
+    <image id="vqps6j" name="3.png" path="/Enemy/2/"/>
+    <image id="vqps6k" name="4.png" path="/Enemy/2/"/>
+    <image id="vqps6l" name="5.png" path="/Enemy/2/"/>
+    <image id="vqps6m" name="6.png" path="/Enemy/2/"/>
+    <image id="vqps6n" name="7.png" path="/Enemy/2/"/>
+    <image id="vqps6o" name="8.png" path="/Enemy/2/"/>
+    <image id="vqps6p" name="Enemy02_upShoot.png" path="/Enemy/2/"/>
+    <image id="vqps6q" name="1.png" path="/Enemy/3/"/>
+    <image id="vqps6r" name="2.png" path="/Enemy/3/"/>
+    <image id="vqps6s" name="3.png" path="/Enemy/3/"/>
+    <image id="vqps6t" name="1.png" path="/Enemy/2/"/>
+    <image id="vqps6u" name="4.png" path="/Enemy/9/"/>
+    <image id="vqps6v" name="1.png" path="/Items/Coin/" exported="true"/>
+    <image id="vqps6w" name="2.png" path="/Items/Speed Up/" exported="true"/>
+    <image id="vqps6x" name="1.png" path="/Items/Speed Up/" exported="true"/>
+    <image id="vqps6y" name="4.png" path="/Items/Power Up/" exported="true"/>
+    <image id="vqps6z" name="3.png" path="/Items/Power Up/" exported="true"/>
+    <image id="vqps70" name="2.png" path="/Items/Power Up/" exported="true"/>
+    <image id="vqps71" name="1.png" path="/Items/Power Up/" exported="true"/>
+    <image id="vqps72" name="4.png" path="/Items/Heal/" exported="true"/>
+    <image id="vqps73" name="3.png" path="/Items/Heal/" exported="true"/>
+    <image id="vqps74" name="2.png" path="/Items/Heal/" exported="true"/>
+    <image id="vqps75" name="1.png" path="/Items/Heal/" exported="true"/>
+    <image id="vqps76" name="4.png" path="/Items/Flash/" exported="true"/>
+    <image id="vqps77" name="3.png" path="/Items/Flash/" exported="true"/>
+    <image id="vqps78" name="2.png" path="/Items/Flash/" exported="true"/>
+    <image id="vqps79" name="1.png" path="/Items/Flash/" exported="true"/>
+    <image id="vqps7a" name="8.png" path="/Items/Coin/" exported="true"/>
+    <image id="vqps7b" name="7.png" path="/Items/Coin/" exported="true"/>
+    <image id="vqps7c" name="6.png" path="/Items/Coin/" exported="true"/>
+    <image id="vqps7d" name="5.png" path="/Items/Coin/" exported="true"/>
+    <image id="vqps7e" name="4.png" path="/Items/Coin/" exported="true"/>
+    <image id="vqps7f" name="3.png" path="/Items/Coin/" exported="true"/>
+    <image id="vqps7g" name="2.png" path="/Items/Coin/" exported="true"/>
+    <image id="vqps7h" name="3.png" path="/Items/Speed Up/" exported="true"/>
+    <image id="vqps7i" name="4.png" path="/Items/Speed Up/" exported="true"/>
+    <image id="vqps7j" name="1.png" path="/Platform/Terran/"/>
+    <image id="vqps7k" name="4.png" path="/Platform/Water/"/>
+    <image id="vqps7l" name="3.png" path="/Platform/Water/"/>
+    <image id="vqps7m" name="2.png" path="/Platform/Water/"/>
+    <image id="vqps7n" name="1.png" path="/Platform/Water/"/>
+    <image id="vqps7o" name="9.png" path="/Platform/Tree And Tile set/"/>
+    <image id="vqps7p" name="8.png" path="/Platform/Tree And Tile set/"/>
+    <image id="vqps7q" name="7.png" path="/Platform/Tree And Tile set/"/>
+    <image id="vqps7r" name="6.png" path="/Platform/Tree And Tile set/"/>
+    <image id="vqps7s" name="5.png" path="/Platform/Tree And Tile set/"/>
+    <image id="vqps7t" name="4.png" path="/Platform/Tree And Tile set/"/>
+    <image id="vqps7u" name="5.png" path="/Platform/Water/"/>
+    <image id="vqps7v" name="3.png" path="/Platform/Tree And Tile set/"/>
+    <image id="vqps7w" name="1.png" path="/Platform/Tree And Tile set/"/>
+    <image id="vqps7x" name="9.png" path="/Platform/Terran/"/>
+    <image id="vqps7y" name="8.png" path="/Platform/Terran/"/>
+    <image id="vqps7z" name="7.png" path="/Platform/Terran/"/>
+    <image id="vqps80" name="6.png" path="/Platform/Terran/"/>
+    <image id="vqps81" name="5.png" path="/Platform/Terran/"/>
+    <image id="vqps82" name="4.png" path="/Platform/Terran/"/>
+    <image id="vqps83" name="3.png" path="/Platform/Terran/"/>
+    <image id="vqps84" name="2.png" path="/Platform/Terran/"/>
+    <image id="vqps85" name="10.png" path="/Platform/Terran/"/>
+    <image id="vqps86" name="2.png" path="/Platform/Tree And Tile set/"/>
+    <image id="vqps87" name="6.png" path="/Platform/Water/"/>
+    <image id="vqps88" name="1.png" path="/Projectile/"/>
+    <image id="vqps89" name="10.png" path="/Projectile/"/>
+    <image id="vqps8a" name="2.png" path="/Projectile/"/>
+    <image id="vqps8b" name="3.png" path="/Projectile/"/>
+    <image id="vqps8c" name="4.png" path="/Projectile/"/>
+    <image id="vqps8d" name="5.png" path="/Projectile/"/>
+    <image id="vqps8e" name="6.png" path="/Projectile/"/>
+    <image id="vqps8f" name="7.png" path="/Projectile/"/>
+    <image id="vqps8g" name="8.png" path="/Projectile/"/>
+    <image id="vqps8h" name="9.png" path="/Projectile/"/>
+    <image id="vqps8i" name="0Star.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8j" name="LockStage.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8k" name="MenuBtn.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8l" name="op1.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8m" name="op2.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8n" name="op3.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8o" name="PauseBtn.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8p" name="PlayBtn.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8q" name="PopupBox.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8r" name="prj01.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8s" name="prj02.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8t" name="prj03.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8u" name="prj04.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8v" name="prj05.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8w" name="prj06.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8x" name="prj07.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8y" name="prj08.png" path="/User Interface/" exported="true"/>
+    <image id="vqps8z" name="prj09.png" path="/User Interface/" exported="true"/>
+    <image id="vqps90" name="prj10.png" path="/User Interface/" exported="true"/>
+    <image id="vqps91" name="ProfileBtn.png" path="/User Interface/" exported="true"/>
+    <image id="vqps92" name="RestartBtn.png" path="/User Interface/" exported="true"/>
+    <image id="vqps93" name="RibonTitle.png" path="/User Interface/" exported="true"/>
+    <image id="vqps95" name="shootCtrl.png" path="/User Interface/" exported="true"/>
+    <image id="vqps96" name="SoundOff.png" path="/User Interface/" exported="true"/>
+    <image id="vqps97" name="SoundON.png" path="/User Interface/" exported="true"/>
+    <image id="vqps98" name="stageAvailable.png" path="/User Interface/" exported="true"/>
+    <image id="vqps99" name="StoreBox.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9a" name="StoreBtn.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9b" name="Tittle.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9c" name="Loadbar04.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9d" name="Loadbar03.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9e" name="Loadbar02.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9f" name="Loadbar01.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9g" name="128.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9h" name="1star.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9i" name="2star.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9j" name="3star.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9k" name="AchievmentBtn.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9l" name="AddBtn.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9m" name="AtributBox1.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9n" name="AtributBox2.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9p" name="bg02.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9q" name="boxAtribut.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9r" name="boxStat.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9s" name="btn01.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9t" name="btn02.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9u" name="watchvideo.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9v" name="btn03.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9w" name="buyBtn.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9x" name="CloseBtn.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9y" name="emptyForm.png" path="/User Interface/" exported="true"/>
+    <image id="vqps9z" name="FBBtn.png" path="/User Interface/" exported="true"/>
+    <image id="vqpsa0" name="GplusBtn.png" path="/User Interface/" exported="true"/>
+    <image id="vqpsa1" name="hudLine1.png" path="/User Interface/" exported="true"/>
+    <image id="vqpsa2" name="hudLine2.png" path="/User Interface/" exported="true"/>
+    <image id="vqpsa3" name="hudLine3.png" path="/User Interface/" exported="true"/>
+    <image id="vqpsa4" name="hudplayerIco.png" path="/User Interface/" exported="true"/>
+    <image id="vqpsa5" name="jumpCtrler.png" path="/User Interface/" exported="true"/>
+    <image id="vqpsa7" name="line1.png" path="/User Interface/" exported="true"/>
+    <image id="vqpsa8" name="line2.png" path="/User Interface/" exported="true"/>
+    <image id="vqpsa9" name="line3.png" path="/User Interface/" exported="true"/>
+    <image id="vqpsaa" name="btn04.png" path="/User Interface/" exported="true"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

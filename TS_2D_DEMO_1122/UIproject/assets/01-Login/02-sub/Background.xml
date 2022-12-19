@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n2_vqps" name="n2" src="vqps9" fileName="00-image/Repeated.png" xy="0,0" size="1920,1080"/>
+    <image id="n4_vqps" name="n4" src="vqps9b" fileName="User Interface/Tittle.png" pkg="gt4zqqx9" xy="119,199" size="770,355"/>
+    <component id="n5_vqps" name="btn_start" src="vqps1" fileName="01-组件/A按钮-开始游戏.xml" xy="1236,311"/>
+    <component id="n7_vqps" name="btn_shop" src="vqps2" fileName="01-组件/A按钮-进入商店.xml" xy="1257,494"/>
+  </displayList>
+</component>

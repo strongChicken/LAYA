@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="g8qzh8ym">
+  <resources>
+    <component id="vqps0" name="shop.xml" path="/02-sub/" exported="true"/>
+    <component id="vqps1" name="turn.xml" path="/01-button/"/>
+    <image id="vqpsa6" name="LeftArrow.png" path="/00-image/"/>
+    <image id="vqps94" name="RightArrow.png" path="/00-image/"/>
+    <image id="vqps9o" name="bg01.png" path="/00-image/"/>
+    <component id="vqps2" name="skin.xml" path="/01-button/"/>
+    <image id="vqpsab" name="YesBtn.png" path="/00-image/"/>
+    <component id="pdraa7" name="skinLst.xml" path="/01-button/"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

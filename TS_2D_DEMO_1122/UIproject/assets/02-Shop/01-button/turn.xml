@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="94,145" extention="Button">
+  <controller name="turn" pages="0,left,1,right" selected="1"/>
+  <displayList>
+    <image id="n5_vqps" name="n5" src="vqpsa6" fileName="00-imgae/LeftArrow.png" xy="0,0">
+      <gearDisplay controller="turn" pages="0"/>
+    </image>
+    <image id="n6_vqps" name="n6" src="vqps94" fileName="00-imgae/RightArrow.png" xy="0,0">
+      <gearDisplay controller="turn" pages="1"/>
+    </image>
+  </displayList>
+  <Button/>
+</component>
