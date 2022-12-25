@@ -1,33 +1,31 @@
 import DataManage from "./DataManage";
 import { ui } from "../ui/layaMaxUI";
-import { fgui } from "../../bin/fgui/fairygui";
 
 export default class ShopPanel extends ui.StartSceneUI {
-    private _view: fgui.GComponent;
-
+    private _shop: fairygui.GComponent;
     constructor() {
         super();
-        fgui.UIPackage.addPackage("res/UI/02-Shop", Laya.Handler.create(this, this.onUILoaded));;
+        fairygui.UIPackage.loadPackage("res/UI/02-Shop", Laya.Handler.create(this, this.onUILoaded));
     }
 
 
     onAwake(): void {
-        this.initWallet();
     }
 
 
     onUILoaded():void {
-        this._view = fgui.UIPackage.createObject("02-Shop", "shop").asCom;
-        fgui.GRoot.inst.addChild(this._view);
+        this._shop = fairygui.UIPackage.createObject("02-Shop", "shop").asCom;
+        fairygui.GRoot.inst.addChild(this._shop);
+        this.initWallet();
     }
 
     destroy(): void {
-        fgui.UIPackage.removePackage("02-shop");
+        fairygui.UIPackage.removePackage("02-shop");
     }
     
     initWallet(): void {
         // this.txt_coin.text = (DataManage.Instance().getCoinCount()).toString();
-        this._view.getChild("txt_wallet").text = (DataManage.Instance().getCoinCount()).toString();
-        
+        this._shop.getChild("txt_wallet").text = "good";
+        console.log(this._shop.getChild("txt_wallet"));
     }
 }

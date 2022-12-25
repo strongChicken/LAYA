@@ -12,9 +12,9 @@
       <item/>
     </list>
     <image id="n5_pdra" name="n5" src="vqps8m" fileName="User Interface/op2.png" pkg="gt4zqqx9" xy="28,14" size="104,104"/>
-    <text id="n6_pdra" name="txt_wallet" xy="149,22" size="154,95" font="Adobe Heiti Std" fontSize="68" vAlign="middle" autoSize="none" autoClearText="true" text="0"/>
+    <text id="n6_pdra" name="txt_wallet" xy="149,22" size="154,95" font="Adobe Heiti Std" fontSize="68" color="#ffffff" vAlign="middle" autoSize="none" autoClearText="true" text="0"/>
     <image id="n7_pdra" name="n7" src="vqps93" fileName="User Interface/RibonTitle.png" pkg="gt4zqqx9" xy="570,2"/>
-    <text id="n9_pdra" name="n9" xy="904,12" size="140,89" fontSize="68" text="道具"/>
+    <text id="n9_pdra" name="n9" xy="904,12" size="208,89" fontSize="68" text="道具啊"/>
     <component id="n10_pdra" name="btn_list" src="pdraa7" fileName="01-button/skinLst.xml" xy="1770,12"/>
   </displayList>
 </component>

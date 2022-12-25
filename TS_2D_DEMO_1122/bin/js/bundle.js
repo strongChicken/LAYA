@@ -1,27 +1,10 @@
 (function () {
     'use strict';
 
-    class StartPanel extends Laya.Script {
-        constructor() {
-            super();
-        }
-        onAwake() {
-            this.owner.getChildByName("btn_start").on(Laya.Event.CLICK, this, this.StartButtonClick);
-            this.owner.getChildByName("btn_shop").on(Laya.Event.CLICK, this, this.ShopButtonClick);
-        }
-        StartButtonClick() {
-            console.log("start");
-        }
-        ShopButtonClick() {
-            console.log("shop");
-        }
-    }
-
     class GameConfig {
         constructor() { }
         static init() {
             var reg = Laya.ClassUtils.regClass;
-            reg("scripts/StartPanel.ts", StartPanel);
         }
     }
     GameConfig.width = 1920;
@@ -37,29 +20,6 @@
     GameConfig.physicsDebug = false;
     GameConfig.exportSceneToJson = true;
     GameConfig.init();
-
-    class DataManage extends Laya.Script {
-        constructor() {
-            super();
-            this.coinCount = Number(Laya.LocalStorage.getItem("CoinCount"));
-            if (Laya.LocalStorage.getItem("CoinCount") == null) {
-                this.coinCount = 10;
-            }
-        }
-        static Instance() {
-            if (this.instance == null) {
-                this.instance = new DataManage();
-            }
-            return this.instance;
-        }
-        getCoinCount() {
-            return this.coinCount;
-        }
-        addCoinCount(value = 1) {
-            this.coinCount++;
-            Laya.LocalStorage.setItem("CoinCount", String(this.coinCount));
-        }
-    }
 
     var Scene = Laya.Scene;
     var REG = Laya.ClassUtils.regClass;
@@ -80,21 +40,21 @@
     class ShopPanel extends ui.StartSceneUI {
         constructor() {
             super();
-            fairygui.UIPackage.addPackage("res/UI/02-Shop", Laya.Handler.create(this, this.onUILoaded));
-            ;
+            fairygui.UIPackage.loadPackage("res/UI/02-Shop", Laya.Handler.create(this, this.onUILoaded));
         }
         onAwake() {
-            this.initWallet();
         }
         onUILoaded() {
-            this._view = fairygui.UIPackage.createObject("02-Shop", "shop").asCom;
-            fairygui.GRoot.inst.addChild(this._view);
+            this._shop = fairygui.UIPackage.createObject("02-Shop", "shop").asCom;
+            fairygui.GRoot.inst.addChild(this._shop);
+            this.initWallet();
         }
         destroy() {
             fairygui.UIPackage.removePackage("02-shop");
         }
         initWallet() {
-            this._view.getChild("txt_wallet").text = (DataManage.Instance().getCoinCount()).toString();
+            this._shop.getChild("txt_wallet").text = "good";
+            console.log(this._shop.getChild("txt_wallet"));
         }
     }
 
