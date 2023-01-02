@@ -9,6 +9,11 @@
     <component id="vqps2" name="skin.xml" path="/01-button/"/>
     <image id="vqpsab" name="YesBtn.png" path="/00-image/"/>
     <component id="pdraa7" name="skinLst.xml" path="/01-button/"/>
+    <image id="ht50ac" name="op2.png" path="/00-image/"/>
+    <image id="ht50ad" name="MenuBtn.png" path="/00-image/"/>
+    <image id="piy1ae" name="boxStat.png" path="/00-image/"/>
+    <image id="ymv2af" name="1.png" path="/00-image/"/>
+    <image id="zwjmag" name="RibonTitle.png" path="/00-image/"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name=""/>
 </packageDescription>

@@ -5,16 +5,16 @@
     <component id="n0_vqps" name="btn_left" src="vqps1" fileName="01-button/turn.xml" xy="128,494" group="n3_vqps"/>
     <component id="n1_vqps" name="btn_right" src="vqps1" fileName="01-button/turn.xml" xy="1723,494" group="n3_vqps"/>
     <group id="n3_vqps" name="gup-turn" xy="128,494" size="1689,145" advanced="true" layout="hz" colGap="1501" excludeInvisibles="true"/>
-    <list id="n4_vqps" name="lst_skin" xy="242,307" size="1460,506" layout="row" overflow="scroll" colGap="127" defaultItem="ui://g8qzh8ymvqps2" autoClearItems="true">
+    <list id="n4_vqps" name="lst_skin" xy="242,307" size="1460,506" layout="row" overflow="scroll" scroll="horizontal" colGap="127" defaultItem="ui://g8qzh8ymvqps2" autoClearItems="true">
       <item/>
       <item/>
       <item/>
       <item/>
     </list>
-    <image id="n5_pdra" name="n5" src="vqps8m" fileName="User Interface/op2.png" pkg="gt4zqqx9" xy="28,14" size="104,104"/>
+    <image id="n5_pdra" name="n5" src="ht50ac" fileName="00-image/op2.png" xy="28,14" size="104,104"/>
     <text id="n6_pdra" name="txt_wallet" xy="149,22" size="154,95" font="Adobe Heiti Std" fontSize="68" color="#ffffff" vAlign="middle" autoSize="none" autoClearText="true" text="0"/>
-    <image id="n7_pdra" name="n7" src="vqps93" fileName="User Interface/RibonTitle.png" pkg="gt4zqqx9" xy="570,2"/>
-    <text id="n9_pdra" name="n9" xy="904,12" size="208,89" fontSize="68" text="道具啊"/>
+    <image id="n7_pdra" name="n7" src="zwjmag" fileName="00-image/RibonTitle.png" xy="570,2"/>
+    <text id="n9_pdra" name="n9" xy="904,12" size="140,89" fontSize="68" text="道具"/>
     <component id="n10_pdra" name="btn_list" src="pdraa7" fileName="01-button/skinLst.xml" xy="1770,12"/>
   </displayList>
 </component>

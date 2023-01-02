@@ -3,6 +3,7 @@
 export default class UI_skin extends fgui.GButton {
 
 	public m_lo_skin:fgui.GLoader;
+	public m_img_check:fgui.GImage;
 	public m_txt_price:fgui.GTextField;
 	public m_txt_name:fgui.GTextField;
 	public static URL:string = "ui://g8qzh8ymvqps2";
@@ -13,6 +14,7 @@ export default class UI_skin extends fgui.GButton {
 
 	protected onConstruct():void {
 		this.m_lo_skin = <fgui.GLoader>(this.getChild("lo_skin"));
+		this.m_img_check = <fgui.GImage>(this.getChild("img_check"));
 		this.m_txt_price = <fgui.GTextField>(this.getChild("txt_price"));
 		this.m_txt_name = <fgui.GTextField>(this.getChild("txt_name"));
 	}

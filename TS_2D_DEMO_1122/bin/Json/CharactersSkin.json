@@ -1,0 +1,50 @@
+﻿[
+    {
+        "id": "1",
+        "fiileName": "name1",
+        "price": "200",
+        "path": "res/CharacterSkin/1.png"
+    },
+    {
+        "id": "2",
+        "fiileName": "name2",
+        "price": "500",
+        "path": "res/CharacterSkin/2.png"
+    },
+    {
+        "id": "3",
+        "fiileName": "name3",
+        "price": "20",
+        "path": "res/CharacterSkin/3.png"
+    },
+    {
+        "id": "4",
+        "fiileName": "name4",
+        "price": "600",
+        "path": "res/CharacterSkin/4.png"
+    },
+    {
+        "id": "5",
+        "fiileName": "name5",
+        "price": "100",
+        "path": "res/CharacterSkin/5.png"
+    },
+    {
+        "id": "6",
+        "fiileName": "name6",
+        "price": "230",
+        "path": "res/CharacterSkin/6.png"
+    },
+    {
+        "id": "7",
+        "fiileName": "name7",
+        "price": "130",
+        "path": "res/CharacterSkin/7.png"
+    },
+    {
+        "id": "8",
+        "fiileName": "name8",
+        "price": "150",
+        "path": "res/CharacterSkin/8.png"
+    }
+]

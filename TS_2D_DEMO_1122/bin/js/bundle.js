@@ -13,7 +13,7 @@
     GameConfig.screenMode = "none";
     GameConfig.alignV = "middle";
     GameConfig.alignH = "center";
-    GameConfig.startScene = "StartScene.scene";
+    GameConfig.startScene = "";
     GameConfig.sceneRoot = "";
     GameConfig.debug = false;
     GameConfig.stat = false;
@@ -21,40 +21,108 @@
     GameConfig.exportSceneToJson = true;
     GameConfig.init();
 
-    var Scene = Laya.Scene;
-    var REG = Laya.ClassUtils.regClass;
-    var ui;
-    (function (ui) {
-        class StartSceneUI extends Scene {
-            constructor() { super(); }
-            createChildren() {
-                super.createChildren();
-                this.createView(StartSceneUI.uiView);
-            }
-        }
-        StartSceneUI.uiView = { "type": "Scene", "props": { "width": 1920, "height": 1080 }, "compId": 2, "child": [{ "type": "Sprite", "props": { "name": "startPanel" }, "compId": 9, "child": [{ "type": "Image", "props": { "y": 0, "x": 0, "width": 1920, "skin": "User Interface/bg02.png", "name": "bg", "height": 1080 }, "compId": 3 }, { "type": "Image", "props": { "y": 290, "x": 61, "width": 799, "skin": "User Interface/Tittle.png", "name": "title", "height": 369 }, "compId": 4 }, { "type": "Button", "props": { "y": 406, "x": 1314, "width": 530, "stateNum": 1, "skin": "User Interface/btn02.png", "name": "btn_start", "labelSize": 40, "label": "开始游戏", "height": 137 }, "compId": 7 }, { "type": "Button", "props": { "y": 576, "x": 1357, "width": 444, "stateNum": 1, "skin": "User Interface/btn02.png", "name": "btn_shop", "labelSize": 40, "label": "进入商店", "height": 83 }, "compId": 8 }, { "type": "Script", "props": { "runtime": "scripts/StartPanel.ts" }, "compId": 10 }] }, { "type": "Sprite", "props": { "name": "shopPanel" }, "compId": 17, "child": [{ "type": "Image", "props": { "y": 0, "x": 0, "width": 1920, "skin": "User Interface/bg01.png", "name": "bg", "height": 1080 }, "compId": 11 }, { "type": "Image", "props": { "y": 12, "x": 16, "width": 99, "var": "coin", "skin": "User Interface/op2.png", "name": "coin", "height": 99 }, "compId": 12, "child": [{ "type": "Text", "props": { "y": 0, "x": 99, "width": 293, "var": "txt_coin", "valign": "middle", "text": "0", "name": "txt_coin", "height": 97, "fontSize": 90, "color": "#e2e2e2", "align": "center", "runtime": "Laya.Text" }, "compId": 13 }] }, { "type": "Image", "props": { "y": 0, "x": 542, "skin": "User Interface/RibonTitle.png", "name": "prop" }, "compId": 14, "child": [{ "type": "Text", "props": { "y": 11, "x": 117, "width": 580, "valign": "middle", "text": "道具", "name": "txt_prop", "height": 89, "fontSize": 80, "align": "center", "runtime": "Laya.Text" }, "compId": 15 }] }, { "type": "Button", "props": { "y": 17, "x": 1797, "width": 102, "stateNum": 1, "skin": "User Interface/MenuBtn.png", "name": "btn_menu", "label": "label", "height": 102 }, "compId": 16 }, { "type": "List", "props": { "y": 257, "x": 278.5, "visible": true, "var": "m_list", "spaceX": 150, "selectEnable": true, "repeatY": 1, "repeatX": 5, "renderType": "render", "name": "lst_skin", "elasticEnabled": true }, "compId": 26, "child": [{ "type": "Box", "props": { "var": "box_skin", "renderType": "render", "name": "box_skin" }, "compId": 24, "child": [{ "type": "Image", "props": { "var": "img_skin", "skin": "User Interface/boxStat.png", "name": "img_skin" }, "compId": 18, "child": [{ "type": "Image", "props": { "y": 175.5, "x": 38.5, "width": 270, "skin": "CharacterSkin/1.png", "name": "img_skin", "height": 270 }, "compId": 19 }, { "type": "Image", "props": { "y": 41, "x": 201, "skin": "User Interface/YesBtn.png", "name": "img_choice" }, "compId": 20 }, { "type": "Image", "props": { "y": 504, "x": 68, "width": 78, "skin": "Items/Coin/1.png", "height": 81 }, "compId": 21, "child": [{ "type": "Text", "props": { "y": 13, "x": 70, "width": 187, "valign": "middle", "text": "9999", "name": "txt_price", "height": 55, "fontSize": 40, "color": "#e0e0e0", "align": "left", "runtime": "Laya.Text" }, "compId": 22 }] }, { "type": "Text", "props": { "y": 428, "x": 75.5, "width": 196, "valign": "middle", "text": "name", "name": "txt_name", "height": 68, "fontSize": 70, "color": "#e5e5e5", "align": "center", "runtime": "Laya.Text" }, "compId": 23 }] }] }] }] }, { "type": "Button", "props": { "y": 449, "x": 50, "width": 118, "stateNum": 1, "skin": "User Interface/LeftArrow.png", "name": "btn_left", "height": 182 }, "compId": 27 }, { "type": "Button", "props": { "y": 449, "x": 1714, "width": 118, "stateNum": 1, "skin": "User Interface/RightArrow.png", "name": "btn_right", "height": 182 }, "compId": 28 }], "loadList": ["User Interface/bg02.png", "User Interface/Tittle.png", "User Interface/btn02.png", "User Interface/bg01.png", "User Interface/op2.png", "User Interface/RibonTitle.png", "User Interface/MenuBtn.png", "User Interface/boxStat.png", "CharacterSkin/1.png", "User Interface/YesBtn.png", "Items/Coin/1.png", "User Interface/LeftArrow.png", "User Interface/RightArrow.png"], "loadList3D": [] };
-        ui.StartSceneUI = StartSceneUI;
-        REG("ui.StartSceneUI", StartSceneUI);
-    })(ui || (ui = {}));
-
-    class ShopPanel extends ui.StartSceneUI {
+    class DataManage extends Laya.Script {
         constructor() {
             super();
+            this.coinCount = Number(Laya.LocalStorage.getItem("CoinCount"));
+            if (Laya.LocalStorage.getItem("CoinCount") == null) {
+                this.coinCount = 10;
+            }
+        }
+        static Instance() {
+            if (this.instance == null) {
+                this.instance = new DataManage();
+            }
+            return this.instance;
+        }
+        getCoinCount() {
+            return this.coinCount;
+        }
+        addCoinCount(value = 1) {
+            this.coinCount++;
+            Laya.LocalStorage.setItem("CoinCount", String(this.coinCount));
+        }
+    }
+
+    class JsonData extends Laya.Script {
+        constructor(jsonUrl, callBack) {
+            super();
+            this.JsonData(jsonUrl);
+            this.callBack = callBack;
+        }
+        JsonData(jsonUrl) {
+            Laya.loader.load(jsonUrl, Laya.Handler.create(this, this.onLoadJson, [jsonUrl]), null, Laya.Loader.JSON);
+        }
+        onLoadJson(jsonUrl) {
+            this.jsonData = Laya.Loader.getRes(jsonUrl);
+            console.log("JsonData LoadJson: succee");
+            this.callBack(this.jsonData);
+        }
+    }
+
+    class ShopItem extends fgui.GButton {
+        constructor() {
+            super();
+        }
+        onConstruct() {
+            this._ItemName = this.getChild("txt_name").asTextField;
+            this._ItemPice = this.getChild("txt_price").asTextField;
+            this._ItemIcon = this.getChild("lo_skin").asLoader;
+        }
+        setName(value) {
+            this._ItemName.text = value;
+        }
+        setPrice(value) {
+            this._ItemPice.text = value;
+        }
+        setIcon(value) {
+            this._ItemIcon.url = value;
+        }
+    }
+
+    class ShopPanel {
+        constructor() {
             fairygui.UIPackage.loadPackage("res/UI/02-Shop", Laya.Handler.create(this, this.onUILoaded));
         }
         onAwake() {
         }
         onUILoaded() {
+            fgui.UIObjectFactory.setExtension("ui://02-Shop/skin", ShopItem);
             this._shop = fairygui.UIPackage.createObject("02-Shop", "shop").asCom;
             fairygui.GRoot.inst.addChild(this._shop);
             this.initWallet();
+            this._list = this._shop.getChild("lst_skin").asList;
+            this.onloadJson();
+        }
+        onloadJson() {
+            new JsonData("./Json/CharactersSkin.json", (jsonDate) => {
+                for (let i = 0; i < jsonDate.length; i++) {
+                    let item = this._list.addItemFromPool();
+                    item.setName(jsonDate[i]["fiileName"]);
+                    item.setPrice(jsonDate[i]["price"]);
+                    item.setIcon(jsonDate[i]["path"]);
+                }
+                console.log("shopPanel get shopItem succee");
+            });
         }
         destroy() {
             fairygui.UIPackage.removePackage("02-shop");
         }
         initWallet() {
-            this._shop.getChild("txt_wallet").text = "good";
-            console.log(this._shop.getChild("txt_wallet"));
+            this._shop.getChild("txt_wallet").text = (DataManage.Instance().getCoinCount()).toString();
+        }
+    }
+
+    class StartPanel {
+        constructor() {
+        }
+        onAwake() {
+        }
+        StartButtonClick() {
+            console.log("start");
+        }
+        ShopButtonClick() {
+            console.log("shop");
         }
     }
 
@@ -84,7 +152,9 @@
             Laya.AtlasInfoManager.enable("fileconfig.json", Laya.Handler.create(this, this.onConfigLoaded));
         }
         onConfigLoaded() {
-            Laya.stage.addChild(new ShopPanel());
+            Laya.stage.addChild(fgui.GRoot.inst.displayObject);
+            new ShopPanel();
+            new StartPanel();
         }
     }
     new Main();

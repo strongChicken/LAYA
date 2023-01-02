@@ -33,7 +33,10 @@ class Main {
 	onConfigLoaded(): void {
 		//加载IDE指定的场景
 		// GameConfig.startScene && Laya.Scene.open(GameConfig.startScene);
-		Laya.stage.addChild(new ShopPanel());
+		Laya.stage.addChild(fgui.GRoot.inst.displayObject);
+
+		new ShopPanel();
+		new StartPanel();
 	}
 }
 //激活启动类

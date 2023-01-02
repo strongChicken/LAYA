@@ -1,3 +1,0 @@
-    onAwake(): void {
-        this.Init();
-    }

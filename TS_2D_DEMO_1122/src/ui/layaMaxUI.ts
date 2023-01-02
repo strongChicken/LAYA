@@ -18,4 +18,4 @@ export module ui {
         }
     }
     REG("ui.StartSceneUI",StartSceneUI);
-}
+}
